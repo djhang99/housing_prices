@@ -6,11 +6,11 @@
 Group project to use machine learning to predict the housing prices in Ames, Iowa.
 
 ## Goal
-<insert later>
+(insert later)
   
 ## Data
 Dataset was taken from Kaggle
-- Time period = <insert later>
+- Time period = (insert later)
 - Data from = - The Ames Housing dataset was compiled by Dean De Cock
 
 ### Description of Data Files
@@ -23,7 +23,7 @@ Dataset was taken from Kaggle
 - country: name of the country
 - year: the year the data was collected for
 - sex: gender (male or female)
-<fill later>
+(insert later)
   
  #### Ames_HousePrice.csv
 (Description of the rows below)
@@ -31,7 +31,7 @@ Dataset was taken from Kaggle
 - country: name of the country
 - year: the year the data was collected for
 - sex: gender (male or female)
-<fill later>
+(insert later)
 
 ## Coding Files
 - Done in Python
