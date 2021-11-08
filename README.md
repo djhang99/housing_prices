@@ -1,5 +1,5 @@
 # Predicting Housing Prices 
-- Author: David Jhang, Hugh Goode, Jung Hwan Lim, Jack Copeland
+- Authors: David Jhang, Hugh Goode, Jung Hwan Lim, Jack Copeland
 - NYC Data Academy Project 3
 
 ## Project Description
@@ -7,9 +7,6 @@ Group project to use machine learning to predict the housing prices in Ames, Iow
 
 ## Goal
 <insert later>
-
-#### sub-directory "../(username)/
-- containing each group members code  
   
 ## Data
 Dataset was taken from Kaggle
@@ -20,7 +17,7 @@ Dataset was taken from Kaggle
 - Ames Real Estate Data.csv
 - Ames_HousePrice.csv
 
-#### Ames Real Estate Data.csv 
+#### Ames Real Estate Data.csv Cancel changes
 (Description of the rows below)
 
 - country: name of the country
@@ -38,3 +35,6 @@ Dataset was taken from Kaggle
 
 ## Coding Files
 - Done in Python
+  
+## Sub-Directory "../(username)/
+- containing each group members code
