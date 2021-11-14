@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-%matplotlib inline
 
 housing = pd.read_csv('Ames_HousePrice.csv', index_col=0)
 
@@ -44,3 +43,4 @@ housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.colu
 full_dum_data = pd.concat([housing_num_PID, housing_num, cat_dum], axis = 1) #Concatendate dummified data and numeric data
 
 full_dum_data.to_csv('dum_scaled_data.csv')
+price.to_csv('price_target.csv')
