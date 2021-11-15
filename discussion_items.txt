@@ -13,3 +13,8 @@ Hugh Questions?
 4. Create functions for cleaning, dummifying, and scaling? Or just export csv's with clean data to use
 
 5. Split up features (EDA) and ML model types among 4 us to streamline work?
+
+6. Latest data is for year 2010, if we are doing a predictive model should we assume that we are predicting
+for 2010/2011. Do we need to inflation adjust sale price data based on date of sale?
+
+7. Which file do we want to train test split in? Use KFold for validation of models?
