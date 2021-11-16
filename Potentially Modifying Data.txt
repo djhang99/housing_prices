@@ -1,0 +1,33 @@
+- Get Rid of Street
+
+- MSZoning: RL, RM, FV, other?
+
+- Alley: No Alley, Something
+
+- LotShape: Reg, IR1, other?
+
+- LandContour: Utilities
+
+- LandSlope: Gtl, non-Gtl
+
+- Condition1: Norm & Abnorm?
+
+- Condition2: Norm & Abnorm?
+
+- BldgType: 1Fam, Townhouse, 2Fam?
+
+- RoofStyle: Gable, Hip, Other
+
+- RoofMatl: CompShg and Other?
+
+- Functional: Typ & Non-Typ?
+
+- Fireplaces: 0, 1, >1?
+
+- PoolQC: No Pool & Pool?
+
+- Fence: No Fence & Fence
+
+- MiscFeature: No_Misc & Misc
+
+- what do we do with sale type & condition?
