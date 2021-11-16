@@ -78,4 +78,4 @@ def dummify_func(housing):
     housing_num_scaled = scaler.transform(housing_num)
     housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)
     full_dum_data = pd.concat([housing_num_PID, housing_num, cat_dum], axis = 1) #Concatenate dummified data and numeric data
-    return full_dum_data, price
+    return full_dum_data, pd.DataFrame(price)
