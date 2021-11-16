@@ -11,6 +11,7 @@ def cleaning(dataframe):
     housing = dataframe
     ## LotFrontage -- replace with mean of the column 
     housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)
+    housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)
 
     ## Replace Nulls where NA just means that the house does not have the feature 
 
@@ -23,7 +24,7 @@ def cleaning(dataframe):
 
     ## Garage Type 
     housing['GarageType'].fillna(value = 'No_Garage', inplace=True)
-    housing['GarageYrBlt'].fillna(value = 'No_Garage', inplace=True)
+
     housing['GarageFinish'].fillna(value = 'No_Garage', inplace=True)
     housing['GarageQual'].fillna(value = 'No_Garage', inplace=True)
     housing['GarageCond'].fillna(value = 'No_Garage', inplace=True)
