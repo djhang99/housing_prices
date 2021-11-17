@@ -12,3 +12,5 @@ for 2010/2011. Do we need to inflation adjust sale price data based on date of s
 3. Should y be a dateframe or array running into problems with tree models?
 
 4. Use Mean Square Error as metric in all models? Cannot use the default R_squared in non_linear models
+
+5. Take log of the SalePrice in all linear models?
