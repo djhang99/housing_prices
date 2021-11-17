@@ -56,7 +56,7 @@ def cleaning(dataframe):
     housing.dropna(axis = 0, inplace = True)
 
     ## there is a duplicate row PID == 909276070, need to remove
-    housing.dropna(axis = 0, inplace = True)
+    housing = housing.drop_duplicates(subset='PID', keep='first', ignore_index='True')
     return housing
 
 
