@@ -54,6 +54,9 @@ def cleaning(dataframe):
 
     ## At this point, only one null value remains in the "Electric Column". We will just remove that one row
     housing.dropna(axis = 0, inplace = True)
+
+    ## there is a duplicate row PID == 909276070, need to remove
+    housing.dropna(axis = 0, inplace = True)
     return housing
 
 
