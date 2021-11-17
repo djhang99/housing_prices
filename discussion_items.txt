@@ -5,16 +5,10 @@ Hugh Questions?
   I don't think a gaussian distribution can be assumed. Therefore, should not Used
   StandardScaler()
 
-2. Year/Month sold to be categorical(only 4 options). Year built and remodeled to be Numeric
-  (100 year range)?
 
-3. How to handle null values for Lot Frontage?
-
-4. Create functions for cleaning, dummifying, and scaling? Or just export csv's with clean data to use
-
-5. Split up features (EDA) and ML model types among 4 us to streamline work?
-
-6. Latest data is for year 2010, if we are doing a predictive model should we assume that we are predicting
+2. Latest data is for year 2010, if we are doing a predictive model should we assume that we are predicting
 for 2010/2011. Do we need to inflation adjust sale price data based on date of sale?
 
-7. Which file do we want to train test split in? Use KFold for validation of models?
+3. Should y be a dateframe or array running into problems with tree models?
+
+4. Use Mean Square Error as metric in all models? Cannot use the default R_squared in non_linear models
