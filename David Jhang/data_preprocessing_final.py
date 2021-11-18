@@ -65,7 +65,7 @@ def dummify_func(housing):
     housing = housing.drop('index', axis = 1) # drop original index with duplicates
     price = housing['SalePrice'] # Create Y Variable
     category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical
-    housing_num = housing.select_dtypes(['int64', 'float64']) # Select numeric data types
+    housing_num = housing.select_dtypes('int64', 'float64') # Select numeric data types
     housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later
     ## Numeric Colums to convert
     # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold
