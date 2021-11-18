@@ -2,7 +2,7 @@
 
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, OrdinalEncoder
 
 ## Cleaning is going to take the data and remove all null values
 
