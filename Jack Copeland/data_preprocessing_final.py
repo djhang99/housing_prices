@@ -36,6 +36,9 @@ def cleaning(dataframe):
     housing['MiscFeature'].fillna(value = 'No_Misc', inplace=True)
     housing['Alley'].fillna(value = 'No_alley', inplace=True)
 
+    housing['MasVnrType'].fillna(value = 'None', inplace=True)
+
+
     ##----------------------------------------------------------------##
 
     ##Replacing nulls with 0s
@@ -43,7 +46,6 @@ def cleaning(dataframe):
     housing['BsmtFinSF1'].fillna(value = 0, inplace=True)
     housing['BsmtFinSF2'].fillna(value = 0, inplace=True)
     housing['BsmtUnfSF'].fillna(value = 0, inplace=True)
-    housing['MasVnrType'].fillna(value = 0, inplace=True)
     housing['TotalBsmtSF'].fillna(value = 0, inplace=True)
     housing['MasVnrArea'].fillna(value = 0, inplace=True)
     housing['BsmtFullBath'].fillna(value = 0, inplace=True)
@@ -54,7 +56,58 @@ def cleaning(dataframe):
 
     ## At this point, only one null value remains in the "Electric Column". We will just remove that one row
     housing.dropna(axis = 0, inplace = True)
+
+
+    ## Create new variables
+
+
+    ## Add a total baths feature and remove the original columns 
+    housing['TotalBath'] = housing['FullBath'] + (housing['HalfBath']*0.5) + housing['BsmtFullBath'] + (housing['BsmtHalfBath']*0.5)
+    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath', 'TotalBath']
+    housing.drop(columns= baths_drop, inplace=True, axis =1)
+    
+    ## Add ratio for unfinished basement space -- Make sure this is always before "TotalLivArea" is created or columns will be dropped
+    housing['Bsmt_Unfin_Ratio'] = housing['BsmtUnfSF'] / housing['TotalBsmtSF']
+    housing.drop(columns = 'BsmtUnfSF', axis = 1, inplace = True)
+
+    ## Add a total living area feature and remove original columns 
+    housing['TotalLivArea'] = housing['GrLivArea'] + housing['TotalBsmtSF']
+    liv_drop = ['GrLivArea', 'TotalBsmtSF']
+    housing.drop(columns = liv_drop, axis = 1, inplace = True)
+
+    ## Remove bedrooms from above ground total rooms to avoid multicollinearity
+    housing['TotRmsAbvGrd'] = housing['TotRmsAbvGrd'] - housing['BedroomAbvGr']
+
+
+    ## Remove unnecessary columns 
+    cols_to_drop = [
+        '1stFlrSF',
+        '2ndFlrSF',
+        'BsmtFinSF1', 
+        'BsmtFinSF2',
+        'Street',
+        'Alley',
+        'Utilities',
+        'Condition2',
+        'RoofMatl',
+        'Heating',
+        'Electrical',
+        'LowQualFinSF',
+        'KitchenAbvGr',
+        'GarageCars',
+        'GarageCond',
+        'PoolArea',
+        'PoolQC',
+        'MiscFeature',
+        'MiscVal',
+        'SaleType']
+
+    housing.drop(columns= cols_to_drop, axis=1, inplace=True)
+
     return housing
+    
+
+
 
 
 def dummify_func(housing):
@@ -69,9 +122,9 @@ def dummify_func(housing):
     # How to handle MiscVal???
     #Leave YearBuilt and YearRemodAdd as numeric to be scaled
     housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \
-    'OverallCond', 'MoSold', 'YrSold', 'MiscVal'], axis = 1)
+    'OverallCond', 'MoSold', 'YrSold'], axis = 1)
     housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \
-    'MoSold', 'YrSold', 'MiscVal']]
+    'MoSold', 'YrSold']]
     category = pd.concat([category, housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
     cat_dum = pd.get_dummies(category, drop_first = True)
     scaler = MinMaxScaler()
