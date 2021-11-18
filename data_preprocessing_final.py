@@ -103,6 +103,17 @@ def cleaning(dataframe):
         'SaleType']
 
     housing.drop(columns= cols_to_drop, axis=1, inplace=True)
+    
+    # Grouping all the different irregular lotshapes together as 'IR'
+    housing.loc[housing.LotShape == 'IR1', 'LotShape'] = 'IR'
+    housing.loc[housing.LotShape == 'IR2', 'LotShape'] = 'IR'
+    housing.loc[housing.LotShape == 'IR3', 'LotShape'] = 'IR'
+    
+    # Grouping all the rare roofstyles together as 'Other'
+    housing.loc[housing.RoofStyle == 'Gambrel', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Flat', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Mansard', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Shed', 'RoofStyle'] = 'Other'
 
     return housing
     
