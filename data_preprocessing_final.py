@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, OrdinalEncoder
@@ -158,9 +156,9 @@ def ord_enc_func(housing):
     # How to handle MiscVal???
     #Leave YearBuilt and YearRemodAdd as numeric to be scaled
     housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \
-    'OverallCond', 'MoSold', 'YrSold', 'MiscVal'], axis = 1)
+    'OverallCond', 'MoSold', 'YrSold'], axis = 1)
     housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \
-    'MoSold', 'YrSold', 'MiscVal']]
+    'MoSold', 'YrSold']]
     category = pd.concat([category.astype(str), housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
     oe = OrdinalEncoder()
     cat_ord_enc = oe.fit_transform(category)

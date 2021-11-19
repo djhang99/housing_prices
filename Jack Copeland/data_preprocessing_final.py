@@ -1,8 +1,6 @@
-
-
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, OrdinalEncoder
 
 ## Cleaning is going to take the data and remove all null values
 
@@ -61,16 +59,16 @@ def cleaning(dataframe):
     ## Create new variables
 
 
-    ## Add a total baths feature and remove the original columns 
+    ## Add a total baths feature and remove the original columns
     housing['TotalBath'] = housing['FullBath'] + (housing['HalfBath']*0.5) + housing['BsmtFullBath'] + (housing['BsmtHalfBath']*0.5)
     baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath', 'TotalBath']
     housing.drop(columns= baths_drop, inplace=True, axis =1)
-    
+
     ## Add ratio for unfinished basement space -- Make sure this is always before "TotalLivArea" is created or columns will be dropped
     housing['Bsmt_Unfin_Ratio'] = housing['BsmtUnfSF'] / housing['TotalBsmtSF']
     housing.drop(columns = 'BsmtUnfSF', axis = 1, inplace = True)
 
-    ## Add a total living area feature and remove original columns 
+    ## Add a total living area feature and remove original columns
     housing['TotalLivArea'] = housing['GrLivArea'] + housing['TotalBsmtSF']
     liv_drop = ['GrLivArea', 'TotalBsmtSF']
     housing.drop(columns = liv_drop, axis = 1, inplace = True)
@@ -79,11 +77,11 @@ def cleaning(dataframe):
     housing['TotRmsAbvGrd'] = housing['TotRmsAbvGrd'] - housing['BedroomAbvGr']
 
 
-    ## Remove unnecessary columns 
+    ## Remove unnecessary columns
     cols_to_drop = [
         '1stFlrSF',
         '2ndFlrSF',
-        'BsmtFinSF1', 
+        'BsmtFinSF1',
         'BsmtFinSF2',
         'Street',
         'Alley',
@@ -104,13 +102,24 @@ def cleaning(dataframe):
 
     housing.drop(columns= cols_to_drop, axis=1, inplace=True)
 
+    # Grouping all the different irregular lotshapes together as 'IR'
+    housing.loc[housing.LotShape == 'IR1', 'LotShape'] = 'IR'
+    housing.loc[housing.LotShape == 'IR2', 'LotShape'] = 'IR'
+    housing.loc[housing.LotShape == 'IR3', 'LotShape'] = 'IR'
+
+    # Grouping all the rare roofstyles together as 'Other'
+    housing.loc[housing.RoofStyle == 'Gambrel', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Flat', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Mansard', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Shed', 'RoofStyle'] = 'Other'
+
     return housing
-    
 
 
 
 
-def dummify_func(housing):
+
+def dummify_func(housing, scaler):
     housing = housing.reset_index() #duplicated index values in csv need to reset
     housing = housing.drop('index', axis = 1) # drop original index with duplicates
     price = housing['SalePrice'] # Create Y Variable
@@ -127,9 +136,36 @@ def dummify_func(housing):
     'MoSold', 'YrSold']]
     category = pd.concat([category, housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
     cat_dum = pd.get_dummies(category, drop_first = True)
-    scaler = MinMaxScaler()
-    scaler.fit(housing_num)
+    # scaler = MinMaxScaler()
+    # scaler.fit(housing_num)
     housing_num_scaled = scaler.transform(housing_num)
     housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)
     full_dum_data = pd.concat([housing_num_PID, housing_num_scaled, cat_dum], axis = 1) #Concatenate dummified data and numeric data
     return full_dum_data, pd.DataFrame(price)
+
+
+def ord_enc_func(housing):
+    housing = housing.reset_index() #duplicated index values in csv need to reset
+    housing = housing.drop('index', axis = 1) # drop original index with duplicates
+    price = housing['SalePrice'] # Create Y Variable
+    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical
+    housing_num = housing.select_dtypes(['int64', 'float64']) # Select numeric data types
+    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later
+    ## Numeric Colums to convert
+    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold
+    # How to handle MiscVal???
+    #Leave YearBuilt and YearRemodAdd as numeric to be scaled
+    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \
+    'OverallCond', 'MoSold', 'YrSold'], axis = 1)
+    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \
+    'MoSold', 'YrSold']]
+    category = pd.concat([category.astype(str), housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
+    oe = OrdinalEncoder()
+    cat_ord_enc = oe.fit_transform(category)
+    scaler = MinMaxScaler()
+    scaler.fit(housing_num)
+    housing_num_scaled = scaler.transform(housing_num)
+    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)
+    cat_ord_enc =pd.DataFrame(cat_ord_enc, columns = category.columns)
+    full_oe_data = pd.concat([housing_num_PID, housing_num_scaled, cat_ord_enc], axis = 1) #Concatenate dummified data and numeric data
+    return full_oe_data, pd.DataFrame(price)
