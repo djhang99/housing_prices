@@ -113,6 +113,8 @@ def cleaning(dataframe):
     housing.loc[housing.RoofStyle == 'Mansard', 'RoofStyle'] = 'Other'
     housing.loc[housing.RoofStyle == 'Shed', 'RoofStyle'] = 'Other'
 
+    housing['Bsmt_Unfin_Ratio'].fillna(value = 0, inplace = True)
+
     return housing
 
 
