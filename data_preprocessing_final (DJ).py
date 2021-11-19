@@ -1,285 +1,252 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import numpy as np\n",
-    "import pandas as pd\n",
-    "from sklearn.preprocessing import StandardScaler, MinMaxScaler, OrdinalEncoder\n",
-    "\n",
-    "##-------------- OLD CLEANING & DUMMIFY --------------##\n",
-    "\n",
-    "def old_cleaning(dataframe):\n",
-    "    ## Replace all null values based on context\n",
-    "    housing = dataframe\n",
-    "    ## LotFrontage -- replace with mean of the column\n",
-    "    housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)\n",
-    "    housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)\n",
-    "\n",
-    "    ## Replace Nulls where NA just means that the house does not have the feature\n",
-    "\n",
-    "    ## Basement metrics\n",
-    "    housing['BsmtQual'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtCond'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtExposure'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtFinType1'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtFinType2'].fillna(value = 'No_Basement', inplace=True)\n",
-    "\n",
-    "    ## Garage Type\n",
-    "    housing['GarageType'].fillna(value = 'No_Garage', inplace=True)\n",
-    "\n",
-    "    housing['GarageFinish'].fillna(value = 'No_Garage', inplace=True)\n",
-    "    housing['GarageQual'].fillna(value = 'No_Garage', inplace=True)\n",
-    "    housing['GarageCond'].fillna(value = 'No_Garage', inplace=True)\n",
-    "\n",
-    "    ## Replace other nulls where null just means the feature is not there\n",
-    "    housing['FireplaceQu'].fillna(value = 'No_Fireplace', inplace=True)\n",
-    "    housing['PoolQC'].fillna(value = 'No_Pool', inplace=True)\n",
-    "    housing['Fence'].fillna(value = 'No_Fence', inplace=True)\n",
-    "    housing['MiscFeature'].fillna(value = 'No_Misc', inplace=True)\n",
-    "    housing['Alley'].fillna(value = 'No_alley', inplace=True)\n",
-    "\n",
-    "    ##----------------------------------------------------------------##\n",
-    "\n",
-    "    ##Replacing nulls with 0s\n",
-    "\n",
-    "    housing['BsmtFinSF1'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtFinSF2'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtUnfSF'].fillna(value = 0, inplace=True)\n",
-    "    housing['MasVnrType'].fillna(value = 0, inplace=True)\n",
-    "    housing['TotalBsmtSF'].fillna(value = 0, inplace=True)\n",
-    "    housing['MasVnrArea'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtFullBath'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtHalfBath'].fillna(value = 0, inplace=True)\n",
-    "    housing['GarageCars'].fillna(value = 0, inplace=True)\n",
-    "    housing['GarageArea'].fillna(value = 0, inplace=True)\n",
-    "\n",
-    "\n",
-    "    ## At this point, only one null value remains in the \"Electric Column\". We will just remove that one row\n",
-    "    housing.dropna(axis = 0, inplace = True)\n",
-    "\n",
-    "    ## there is a duplicate row PID == 909276070, need to remove\n",
-    "    housing = housing.drop_duplicates(subset='PID', keep='first', ignore_index='True')\n",
-    "    return housing\n",
-    "\n",
-    "def old_dummify_func(housing):\n",
-    "    housing = housing.reset_index() #duplicated index values in csv need to reset\n",
-    "    housing = housing.drop('index', axis = 1) # drop original index with duplicates\n",
-    "    price = housing['SalePrice'] # Create Y Variable\n",
-    "    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical\n",
-    "    housing_num = housing.select_dtypes('int64', 'float64') # Select numeric data types\n",
-    "    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later\n",
-    "    ## Numeric Colums to convert\n",
-    "    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold\n",
-    "    # How to handle MiscVal???\n",
-    "    #Leave YearBuilt and YearRemodAdd as numeric to be scaled\n",
-    "    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \\\n",
-    "    'OverallCond', 'MoSold', 'YrSold', 'MiscVal'], axis = 1)\n",
-    "    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \\\n",
-    "    'MoSold', 'YrSold', 'MiscVal']]\n",
-    "    category = pd.concat([category, housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified\n",
-    "    cat_dum = pd.get_dummies(category, drop_first = True)\n",
-    "    scaler = MinMaxScaler()\n",
-    "    scaler.fit(housing_num)\n",
-    "    housing_num_scaled = scaler.transform(housing_num)\n",
-    "    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)\n",
-    "    full_dum_data = pd.concat([housing_num_PID, housing_num_scaled, cat_dum], axis = 1) #Concatenate dummified data and numeric data\n",
-    "    return full_dum_data, pd.DataFrame(price)\n",
-    "\n",
-    "\n",
-    "##---------------------------------------END OF OLD----------------------------------------------------------##\n",
-    "\n",
-    "## Cleaning is going to take the data and remove all null values\n",
-    "\n",
-    "def cleaning(dataframe):\n",
-    "    ## Replace all null values based on context\n",
-    "    housing = dataframe\n",
-    "    ## LotFrontage -- replace with mean of the column\n",
-    "    housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)\n",
-    "    housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)\n",
-    "\n",
-    "    ## Replace Nulls where NA just means that the house does not have the feature\n",
-    "\n",
-    "    ## Basement metrics\n",
-    "    housing['BsmtQual'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtCond'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtExposure'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtFinType1'].fillna(value = 'No_Basement', inplace=True)\n",
-    "    housing['BsmtFinType2'].fillna(value = 'No_Basement', inplace=True)\n",
-    "\n",
-    "    ## Garage Type\n",
-    "    housing['GarageType'].fillna(value = 'No_Garage', inplace=True)\n",
-    "\n",
-    "    housing['GarageFinish'].fillna(value = 'No_Garage', inplace=True)\n",
-    "    housing['GarageQual'].fillna(value = 'No_Garage', inplace=True)\n",
-    "    housing['GarageCond'].fillna(value = 'No_Garage', inplace=True)\n",
-    "\n",
-    "    ## Replace other nulls where null just means the feature is not there\n",
-    "    housing['FireplaceQu'].fillna(value = 'No_Fireplace', inplace=True)\n",
-    "    housing['PoolQC'].fillna(value = 'No_Pool', inplace=True)\n",
-    "    housing['Fence'].fillna(value = 'No_Fence', inplace=True)\n",
-    "    housing['MiscFeature'].fillna(value = 'No_Misc', inplace=True)\n",
-    "    housing['Alley'].fillna(value = 'No_alley', inplace=True)\n",
-    "\n",
-    "    housing['MasVnrType'].fillna(value = 'None', inplace=True)\n",
-    "\n",
-    "\n",
-    "    ##----------------------------------------------------------------##\n",
-    "\n",
-    "    ##Replacing nulls with 0s\n",
-    "\n",
-    "    housing['BsmtFinSF1'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtFinSF2'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtUnfSF'].fillna(value = 0, inplace=True)\n",
-    "    housing['TotalBsmtSF'].fillna(value = 0, inplace=True)\n",
-    "    housing['MasVnrArea'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtFullBath'].fillna(value = 0, inplace=True)\n",
-    "    housing['BsmtHalfBath'].fillna(value = 0, inplace=True)\n",
-    "    housing['GarageCars'].fillna(value = 0, inplace=True)\n",
-    "    housing['GarageArea'].fillna(value = 0, inplace=True)\n",
-    "\n",
-    "\n",
-    "    ## At this point, only one null value remains in the \"Electric Column\". We will just remove that one row\n",
-    "    housing.dropna(axis = 0, inplace = True)\n",
-    "\n",
-    "\n",
-    "    ## Create new variables\n",
-    "\n",
-    "\n",
-    "    ## Add a total baths feature and remove the original columns\n",
-    "    housing['TotalBath'] = housing['FullBath'] + (housing['HalfBath']*0.5) + housing['BsmtFullBath'] + (housing['BsmtHalfBath']*0.5)\n",
-    "    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath', 'TotalBath']\n",
-    "    housing.drop(columns= baths_drop, inplace=True, axis =1)\n",
-    "\n",
-    "    ## Add ratio for unfinished basement space -- Make sure this is always before \"TotalLivArea\" is created or columns will be dropped\n",
-    "    housing['Bsmt_Unfin_Ratio'] = housing['BsmtUnfSF'] / housing['TotalBsmtSF']\n",
-    "    housing.drop(columns = 'BsmtUnfSF', axis = 1, inplace = True)\n",
-    "\n",
-    "    ## Add a total living area feature and remove original columns\n",
-    "    housing['TotalLivArea'] = housing['GrLivArea'] + housing['TotalBsmtSF']\n",
-    "    liv_drop = ['GrLivArea', 'TotalBsmtSF']\n",
-    "    housing.drop(columns = liv_drop, axis = 1, inplace = True)\n",
-    "\n",
-    "    ## Remove bedrooms from above ground total rooms to avoid multicollinearity\n",
-    "    housing['TotRmsAbvGrd'] = housing['TotRmsAbvGrd'] - housing['BedroomAbvGr']\n",
-    "\n",
-    "\n",
-    "    ## Remove unnecessary columns\n",
-    "    cols_to_drop = [\n",
-    "        '1stFlrSF',\n",
-    "        '2ndFlrSF',\n",
-    "        'BsmtFinSF1',\n",
-    "        'BsmtFinSF2',\n",
-    "        'Street',\n",
-    "        'Alley',\n",
-    "        'Utilities',\n",
-    "        'Condition2',\n",
-    "        'RoofMatl',\n",
-    "        'Heating',\n",
-    "        'Electrical',\n",
-    "        'LowQualFinSF',\n",
-    "        'KitchenAbvGr',\n",
-    "        'GarageCars',\n",
-    "        'GarageCond',\n",
-    "        'PoolArea',\n",
-    "        'PoolQC',\n",
-    "        'MiscFeature',\n",
-    "        'MiscVal',\n",
-    "        'SaleType']\n",
-    "\n",
-    "    housing.drop(columns= cols_to_drop, axis=1, inplace=True)\n",
-    "\n",
-    "    # Grouping all the different irregular lotshapes together as 'IR'\n",
-    "    housing.loc[housing.LotShape == 'IR1', 'LotShape'] = 'IR'\n",
-    "    housing.loc[housing.LotShape == 'IR2', 'LotShape'] = 'IR'\n",
-    "    housing.loc[housing.LotShape == 'IR3', 'LotShape'] = 'IR'\n",
-    "\n",
-    "    # Grouping all the rare roofstyles together as 'Other'\n",
-    "    housing.loc[housing.RoofStyle == 'Gambrel', 'RoofStyle'] = 'Other'\n",
-    "    housing.loc[housing.RoofStyle == 'Flat', 'RoofStyle'] = 'Other'\n",
-    "    housing.loc[housing.RoofStyle == 'Mansard', 'RoofStyle'] = 'Other'\n",
-    "    housing.loc[housing.RoofStyle == 'Shed', 'RoofStyle'] = 'Other'\n",
-    "\n",
-    "    housing['Bsmt_Unfin_Ratio'].fillna(value = 0, inplace = True)\n",
-    "\n",
-    "    return housing\n",
-    "\n",
-    "\n",
-    "def dummify_func(housing):\n",
-    "    housing = housing.reset_index() #duplicated index values in csv need to reset\n",
-    "    housing = housing.drop('index', axis = 1) # drop original index with duplicates\n",
-    "    price = housing['SalePrice'] # Create Y Variable\n",
-    "    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical\n",
-    "    housing_num = housing.select_dtypes('int64', 'float64') # Select numeric data types\n",
-    "    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later\n",
-    "    ## Numeric Colums to convert\n",
-    "    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold\n",
-    "    # How to handle MiscVal???\n",
-    "    #Leave YearBuilt and YearRemodAdd as numeric to be scaled\n",
-    "    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \\\n",
-    "    'OverallCond', 'MoSold', 'YrSold'], axis = 1)\n",
-    "    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \\\n",
-    "    'MoSold', 'YrSold']]\n",
-    "    category = pd.concat([category, housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified\n",
-    "    cat_dum = pd.get_dummies(category, drop_first = True)\n",
-    "    scaler = MinMaxScaler()\n",
-    "    scaler.fit(housing_num)\n",
-    "    housing_num_scaled = scaler.transform(housing_num)\n",
-    "    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)\n",
-    "    full_dum_data = pd.concat([housing_num_PID, housing_num_scaled, cat_dum], axis = 1) #Concatenate dummified data and numeric data\n",
-    "    return full_dum_data, pd.DataFrame(price)\n",
-    "\n",
-    "\n",
-    "def ord_enc_func(housing):\n",
-    "    housing = housing.reset_index() #duplicated index values in csv need to reset\n",
-    "    housing = housing.drop('index', axis = 1) # drop original index with duplicates\n",
-    "    price = housing['SalePrice'] # Create Y Variable\n",
-    "    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical\n",
-    "    housing_num = housing.select_dtypes(['int64', 'float64']) # Select numeric data types\n",
-    "    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later\n",
-    "    ## Numeric Colums to convert\n",
-    "    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold\n",
-    "    # How to handle MiscVal???\n",
-    "    #Leave YearBuilt and YearRemodAdd as numeric to be scaled\n",
-    "    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \\\n",
-    "    'OverallCond', 'MoSold', 'YrSold'], axis = 1)\n",
-    "    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \\\n",
-    "    'MoSold', 'YrSold']]\n",
-    "    category = pd.concat([category.astype(str), housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified\n",
-    "    oe = OrdinalEncoder()\n",
-    "    cat_ord_enc = oe.fit_transform(category)\n",
-    "    scaler = MinMaxScaler()\n",
-    "    scaler.fit(housing_num)\n",
-    "    housing_num_scaled = scaler.transform(housing_num)\n",
-    "    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)\n",
-    "    cat_ord_enc =pd.DataFrame(cat_ord_enc, columns = category.columns)\n",
-    "    full_oe_data = pd.concat([housing_num_PID, housing_num_scaled, cat_ord_enc], axis = 1) #Concatenate dummified data and numeric data\n",
-    "    return full_oe_data, pd.DataFrame(price)"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.8.3"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, OrdinalEncoder
+
+##-------------- OLD CLEANING & DUMMIFY --------------##
+
+def old_cleaning(dataframe):
+    ## Replace all null values based on context
+    housing = dataframe
+    ## LotFrontage -- replace with mean of the column
+    housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)
+    housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)
+
+    ## Replace Nulls where NA just means that the house does not have the feature
+
+    ## Basement metrics
+    housing['BsmtQual'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtCond'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtExposure'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtFinType1'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtFinType2'].fillna(value = 'No_Basement', inplace=True)
+
+    ## Garage Type
+    housing['GarageType'].fillna(value = 'No_Garage', inplace=True)
+
+    housing['GarageFinish'].fillna(value = 'No_Garage', inplace=True)
+    housing['GarageQual'].fillna(value = 'No_Garage', inplace=True)
+    housing['GarageCond'].fillna(value = 'No_Garage', inplace=True)
+
+    ## Replace other nulls where null just means the feature is not there
+    housing['FireplaceQu'].fillna(value = 'No_Fireplace', inplace=True)
+    housing['PoolQC'].fillna(value = 'No_Pool', inplace=True)
+    housing['Fence'].fillna(value = 'No_Fence', inplace=True)
+    housing['MiscFeature'].fillna(value = 'No_Misc', inplace=True)
+    housing['Alley'].fillna(value = 'No_alley', inplace=True)
+
+    ##----------------------------------------------------------------##
+
+    ##Replacing nulls with 0s
+
+    housing['BsmtFinSF1'].fillna(value = 0, inplace=True)
+    housing['BsmtFinSF2'].fillna(value = 0, inplace=True)
+    housing['BsmtUnfSF'].fillna(value = 0, inplace=True)
+    housing['MasVnrType'].fillna(value = 0, inplace=True)
+    housing['TotalBsmtSF'].fillna(value = 0, inplace=True)
+    housing['MasVnrArea'].fillna(value = 0, inplace=True)
+    housing['BsmtFullBath'].fillna(value = 0, inplace=True)
+    housing['BsmtHalfBath'].fillna(value = 0, inplace=True)
+    housing['GarageCars'].fillna(value = 0, inplace=True)
+    housing['GarageArea'].fillna(value = 0, inplace=True)
+
+
+    ## At this point, only one null value remains in the "Electric Column". We will just remove that one row
+    housing.dropna(axis = 0, inplace = True)
+
+    ## there is a duplicate row PID == 909276070, need to remove
+    housing = housing.drop_duplicates(subset='PID', keep='first', ignore_index='True')
+    return housing
+
+def old_dummify_func(housing):
+    housing = housing.reset_index() #duplicated index values in csv need to reset
+    housing = housing.drop('index', axis = 1) # drop original index with duplicates
+    price = housing['SalePrice'] # Create Y Variable
+    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical
+    housing_num = housing.select_dtypes('int64', 'float64') # Select numeric data types
+    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later
+    ## Numeric Colums to convert
+    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold
+    # How to handle MiscVal???
+    #Leave YearBuilt and YearRemodAdd as numeric to be scaled
+    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \
+    'OverallCond', 'MoSold', 'YrSold', 'MiscVal'], axis = 1)
+    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \
+    'MoSold', 'YrSold', 'MiscVal']]
+    category = pd.concat([category, housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
+    cat_dum = pd.get_dummies(category, drop_first = True)
+    scaler = MinMaxScaler()
+    scaler.fit(housing_num)
+    housing_num_scaled = scaler.transform(housing_num)
+    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)
+    full_dum_data = pd.concat([housing_num_PID, housing_num_scaled, cat_dum], axis = 1) #Concatenate dummified data and numeric data
+    return full_dum_data, pd.DataFrame(price)
+
+
+##---------------------------------------END OF OLD----------------------------------------------------------##
+
+## Cleaning is going to take the data and remove all null values
+
+def cleaning(dataframe):
+    ## Replace all null values based on context
+    housing = dataframe
+    ## LotFrontage -- replace with mean of the column
+    housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)
+    housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)
+
+    ## Replace Nulls where NA just means that the house does not have the feature
+
+    ## Basement metrics
+    housing['BsmtQual'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtCond'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtExposure'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtFinType1'].fillna(value = 'No_Basement', inplace=True)
+    housing['BsmtFinType2'].fillna(value = 'No_Basement', inplace=True)
+
+    ## Garage Type
+    housing['GarageType'].fillna(value = 'No_Garage', inplace=True)
+
+    housing['GarageFinish'].fillna(value = 'No_Garage', inplace=True)
+    housing['GarageQual'].fillna(value = 'No_Garage', inplace=True)
+    housing['GarageCond'].fillna(value = 'No_Garage', inplace=True)
+
+    ## Replace other nulls where null just means the feature is not there
+    housing['FireplaceQu'].fillna(value = 'No_Fireplace', inplace=True)
+    housing['PoolQC'].fillna(value = 'No_Pool', inplace=True)
+    housing['Fence'].fillna(value = 'No_Fence', inplace=True)
+    housing['MiscFeature'].fillna(value = 'No_Misc', inplace=True)
+    housing['Alley'].fillna(value = 'No_alley', inplace=True)
+
+    housing['MasVnrType'].fillna(value = 'None', inplace=True)
+
+
+    ##----------------------------------------------------------------##
+
+    ##Replacing nulls with 0s
+
+    housing['BsmtFinSF1'].fillna(value = 0, inplace=True)
+    housing['BsmtFinSF2'].fillna(value = 0, inplace=True)
+    housing['BsmtUnfSF'].fillna(value = 0, inplace=True)
+    housing['TotalBsmtSF'].fillna(value = 0, inplace=True)
+    housing['MasVnrArea'].fillna(value = 0, inplace=True)
+    housing['BsmtFullBath'].fillna(value = 0, inplace=True)
+    housing['BsmtHalfBath'].fillna(value = 0, inplace=True)
+    housing['GarageCars'].fillna(value = 0, inplace=True)
+    housing['GarageArea'].fillna(value = 0, inplace=True)
+
+
+    ## At this point, only one null value remains in the "Electric Column". We will just remove that one row
+    housing.dropna(axis = 0, inplace = True)
+
+
+    ## Create new variables
+
+
+    ## Add a total baths feature and remove the original columns
+    housing['TotalBath'] = housing['FullBath'] + (housing['HalfBath']*0.5) + housing['BsmtFullBath'] + (housing['BsmtHalfBath']*0.5)
+    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath', 'TotalBath']
+    housing.drop(columns= baths_drop, inplace=True, axis =1)
+
+    ## Add ratio for unfinished basement space -- Make sure this is always before "TotalLivArea" is created or columns will be dropped
+    housing['Bsmt_Unfin_Ratio'] = housing['BsmtUnfSF'] / housing['TotalBsmtSF']
+    housing.drop(columns = 'BsmtUnfSF', axis = 1, inplace = True)
+
+    ## Add a total living area feature and remove original columns
+    housing['TotalLivArea'] = housing['GrLivArea'] + housing['TotalBsmtSF']
+    liv_drop = ['GrLivArea', 'TotalBsmtSF']
+    housing.drop(columns = liv_drop, axis = 1, inplace = True)
+
+    ## Remove bedrooms from above ground total rooms to avoid multicollinearity
+    housing['TotRmsAbvGrd'] = housing['TotRmsAbvGrd'] - housing['BedroomAbvGr']
+
+
+    ## Remove unnecessary columns
+    cols_to_drop = [
+        '1stFlrSF',
+        '2ndFlrSF',
+        'BsmtFinSF1',
+        'BsmtFinSF2',
+        'Street',
+        'Alley',
+        'Utilities',
+        'Condition2',
+        'RoofMatl',
+        'Heating',
+        'Electrical',
+        'LowQualFinSF',
+        'KitchenAbvGr',
+        'GarageCars',
+        'GarageCond',
+        'PoolArea',
+        'PoolQC',
+        'MiscFeature',
+        'MiscVal',
+        'SaleType']
+
+    housing.drop(columns= cols_to_drop, axis=1, inplace=True)
+
+    # Grouping all the different irregular lotshapes together as 'IR'
+    housing.loc[housing.LotShape == 'IR1', 'LotShape'] = 'IR'
+    housing.loc[housing.LotShape == 'IR2', 'LotShape'] = 'IR'
+    housing.loc[housing.LotShape == 'IR3', 'LotShape'] = 'IR'
+
+    # Grouping all the rare roofstyles together as 'Other'
+    housing.loc[housing.RoofStyle == 'Gambrel', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Flat', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Mansard', 'RoofStyle'] = 'Other'
+    housing.loc[housing.RoofStyle == 'Shed', 'RoofStyle'] = 'Other'
+
+    housing['Bsmt_Unfin_Ratio'].fillna(value = 0, inplace = True)
+
+    return housing
+
+
+def dummify_func(housing):
+    housing = housing.reset_index() #duplicated index values in csv need to reset
+    housing = housing.drop('index', axis = 1) # drop original index with duplicates
+    price = housing['SalePrice'] # Create Y Variable
+    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical
+    housing_num = housing.select_dtypes('int64', 'float64') # Select numeric data types
+    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later
+    ## Numeric Colums to convert
+    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold
+    # How to handle MiscVal???
+    #Leave YearBuilt and YearRemodAdd as numeric to be scaled
+    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \
+    'OverallCond', 'MoSold', 'YrSold'], axis = 1)
+    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \
+    'MoSold', 'YrSold']]
+    category = pd.concat([category, housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
+    cat_dum = pd.get_dummies(category, drop_first = True)
+    scaler = MinMaxScaler()
+    scaler.fit(housing_num)
+    housing_num_scaled = scaler.transform(housing_num)
+    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)
+    full_dum_data = pd.concat([housing_num_PID, housing_num_scaled, cat_dum], axis = 1) #Concatenate dummified data and numeric data
+    return full_dum_data, pd.DataFrame(price)
+
+
+def ord_enc_func(housing):
+    housing = housing.reset_index() #duplicated index values in csv need to reset
+    housing = housing.drop('index', axis = 1) # drop original index with duplicates
+    price = housing['SalePrice'] # Create Y Variable
+    category = housing.select_dtypes('object') #Select all 'object' data types  which are all categorical
+    housing_num = housing.select_dtypes(['int64', 'float64']) # Select numeric data types
+    housing_num_PID = housing_num['PID'] # PID index should not be scaled, remove and put back later
+    ## Numeric Colums to convert
+    # MSSubClass, OverallQual, OverallCond, YearBuilt, YearRemodAdd, MoSold, YrSold
+    # How to handle MiscVal???
+    #Leave YearBuilt and YearRemodAdd as numeric to be scaled
+    housing_num = housing_num.drop(['PID', 'SalePrice', 'MSSubClass', 'OverallQual', \
+    'OverallCond', 'MoSold', 'YrSold'], axis = 1)
+    housing_num2cat = housing[['MSSubClass', 'OverallQual', 'OverallCond', \
+    'MoSold', 'YrSold']]
+    category = pd.concat([category.astype(str), housing_num2cat.astype(str)], axis = 1) #Add all categorical features to dataframe to be dummified
+    oe = OrdinalEncoder()
+    cat_ord_enc = oe.fit_transform(category)
+    scaler = MinMaxScaler()
+    scaler.fit(housing_num)
+    housing_num_scaled = scaler.transform(housing_num)
+    housing_num_scaled = pd.DataFrame(housing_num_scaled, columns = housing_num.columns)
+    cat_ord_enc =pd.DataFrame(cat_ord_enc, columns = category.columns)
+    full_oe_data = pd.concat([housing_num_PID, housing_num_scaled, cat_ord_enc], axis = 1) #Concatenate dummified data and numeric data
+    return full_oe_data, pd.DataFrame(price)
