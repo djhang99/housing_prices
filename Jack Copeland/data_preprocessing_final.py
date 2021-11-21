@@ -166,7 +166,7 @@ def scale_data(dataframe, scaler):
     dataframe = pd.concat([dataframe, dataframe_num_scaled], axis=1)
     
     ## Separate out target
-    target = dataframe['SalePrice']
+    target = np.log(dataframe['SalePrice'])
     dataframe.drop('SalePrice', axis=1, inplace = True)
 
     return dataframe, target
