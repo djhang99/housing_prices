@@ -1,16 +1,10 @@
 
 Hugh Questions?
 
-1. Used MinMaxScaler to scale numeric data, since we have a high amount of 0 values
-  I don't think a gaussian distribution can be assumed. Therefore, should not Used
-  StandardScaler()
+1. Should not be taking log of price for tree based models in the initiate data function
 
+2. Should we be scaling the data in the tree based models?
 
-2. Latest data is for year 2010, if we are doing a predictive model should we assume that we are predicting
-for 2010/2011. Do we need to inflation adjust sale price data based on date of sale?
+3. Make sure removing outliers gets incorporated in the cleaning file
 
-3. Should y be a dateframe or array running into problems with tree models?
-
-4. Use Mean Square Error as metric in all models? Cannot use the default R_squared in non_linear models
-
-5. Take log of the SalePrice in all linear models?
+4. Need to set random seed on the train test split, right now my results are varying each time I import data
