@@ -23,8 +23,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Number of Bedrooms' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
-        <calculation class='tableau' formula='3' />
+      <column caption='Number of Bedrooms' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='6'>
+        <calculation class='tableau' formula='6' />
         <members>
           <member value='0' />
           <member value='1' />
@@ -35,8 +35,8 @@
           <member value='6' />
         </members>
       </column>
-      <column caption='Total Rooms Above Ground' datatype='real' name='[Parameter 2]' param-domain-type='list' role='measure' type='quantitative' value='3.0'>
-        <calculation class='tableau' formula='3.0' />
+      <column caption='Total Rooms Above Ground' datatype='real' name='[Parameter 2]' param-domain-type='list' role='measure' type='quantitative' value='4.0'>
+        <calculation class='tableau' formula='4.0' />
         <members>
           <member value='2.0' />
           <member value='3.0' />
@@ -52,12 +52,12 @@
           <member value='13.0' />
         </members>
       </column>
-      <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='727.99599799899954'>
-        <calculation class='tableau' formula='727.99599799899954' />
+      <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='206.1910955477739'>
+        <calculation class='tableau' formula='206.1910955477739' />
         <range max='1488.0' min='0.0' />
       </column>
-      <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Somerst&quot;'>
-        <calculation class='tableau' formula='&quot;Somerst&quot;' />
+      <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;StoneBr&quot;'>
+        <calculation class='tableau' formula='&quot;StoneBr&quot;' />
         <members>
           <member value='&quot;Blmngtn&quot;' />
           <member value='&quot;Blueste&quot;' />
@@ -87,6 +87,136 @@
           <member value='&quot;SWISU&quot;' />
           <member value='&quot;Timber&quot;' />
           <member value='&quot;Veenker&quot;' />
+        </members>
+      </column>
+      <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='2953.3096548274139'>
+        <calculation class='tableau' formula='2953.3096548274139' />
+        <range max='7814.0' min='334.0' />
+      </column>
+      <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='134012.25612806404'>
+        <calculation class='tableau' formula='134012.25612806404' />
+        <range max='215245.0' min='1300.0' />
+      </column>
+      <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='1976.0'>
+        <calculation class='tableau' formula='1976.0' />
+        <aliases>
+          <alias key='1872.0' value='1872' />
+        </aliases>
+        <members>
+          <member alias='1872' value='1872.0' />
+          <member value='1875.0' />
+          <member value='1879.0' />
+          <member value='1880.0' />
+          <member value='1882.0' />
+          <member value='1885.0' />
+          <member value='1890.0' />
+          <member value='1892.0' />
+          <member value='1893.0' />
+          <member value='1895.0' />
+          <member value='1898.0' />
+          <member value='1900.0' />
+          <member value='1902.0' />
+          <member value='1904.0' />
+          <member value='1905.0' />
+          <member value='1906.0' />
+          <member value='1908.0' />
+          <member value='1910.0' />
+          <member value='1912.0' />
+          <member value='1913.0' />
+          <member value='1914.0' />
+          <member value='1915.0' />
+          <member value='1916.0' />
+          <member value='1917.0' />
+          <member value='1918.0' />
+          <member value='1919.0' />
+          <member value='1920.0' />
+          <member value='1921.0' />
+          <member value='1922.0' />
+          <member value='1923.0' />
+          <member value='1924.0' />
+          <member value='1925.0' />
+          <member value='1926.0' />
+          <member value='1927.0' />
+          <member value='1928.0' />
+          <member value='1929.0' />
+          <member value='1930.0' />
+          <member value='1931.0' />
+          <member value='1932.0' />
+          <member value='1934.0' />
+          <member value='1935.0' />
+          <member value='1936.0' />
+          <member value='1937.0' />
+          <member value='1938.0' />
+          <member value='1939.0' />
+          <member value='1940.0' />
+          <member value='1941.0' />
+          <member value='1942.0' />
+          <member value='1945.0' />
+          <member value='1946.0' />
+          <member value='1947.0' />
+          <member value='1948.0' />
+          <member value='1949.0' />
+          <member value='1950.0' />
+          <member value='1951.0' />
+          <member value='1952.0' />
+          <member value='1953.0' />
+          <member value='1954.0' />
+          <member value='1955.0' />
+          <member value='1956.0' />
+          <member value='1957.0' />
+          <member value='1958.0' />
+          <member value='1959.0' />
+          <member value='1960.0' />
+          <member value='1961.0' />
+          <member value='1962.0' />
+          <member value='1963.0' />
+          <member value='1964.0' />
+          <member value='1965.0' />
+          <member value='1966.0' />
+          <member value='1967.0' />
+          <member value='1968.0' />
+          <member value='1969.0' />
+          <member value='1970.0' />
+          <member value='1971.0' />
+          <member value='1972.0' />
+          <member value='1973.0' />
+          <member value='1974.0' />
+          <member value='1975.0' />
+          <member value='1976.0' />
+          <member value='1977.0' />
+          <member value='1978.0' />
+          <member value='1979.0' />
+          <member value='1980.0' />
+          <member value='1981.0' />
+          <member value='1982.0' />
+          <member value='1983.0' />
+          <member value='1984.0' />
+          <member value='1985.0' />
+          <member value='1986.0' />
+          <member value='1987.0' />
+          <member value='1988.0' />
+          <member value='1989.0' />
+          <member value='1990.0' />
+          <member value='1991.0' />
+          <member value='1992.0' />
+          <member value='1993.0' />
+          <member value='1994.0' />
+          <member value='1995.0' />
+          <member value='1996.0' />
+          <member value='1997.0' />
+          <member value='1998.0' />
+          <member value='1999.0' />
+          <member value='2000.0' />
+          <member value='2001.0' />
+          <member value='2002.0' />
+          <member value='2003.0' />
+          <member value='2004.0' />
+          <member value='2005.0' />
+          <member value='2006.0' />
+          <member value='2007.0' />
+          <member value='2008.0' />
+          <member value='2009.0' />
+          <member value='2010.0' />
         </members>
       </column>
     </datasource>
@@ -1569,9 +1699,12 @@
       <column caption='Bsmt Qual' datatype='string' name='[BsmtQual]' role='dimension' type='nominal' />
       <column caption='Bsmt Unf SF' datatype='integer' name='[BsmtUnfSF]' role='measure' type='quantitative' />
       <column caption='Predicted Price' datatype='real' name='[Calculation_1021191257689108480]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;predict_price&apos;,_arg1, _arg2, _arg3)[&apos;response&apos;]&quot;,[Parameters].[Parameter 1],[Parameters].[Parameter 2],[Parameters].[Parameter 3])'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;predict_price&apos;,_arg1, _arg2, _arg3, _arg4)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Parameter 5],[Parameters].[Parameter 6],[Parameters].[Parameter 3], [Parameters].[Parameter 7])'>
           <table-calc ordering-type='Rows' />
         </calculation>
+      </column>
+      <column caption='Total Living Area' datatype='integer' name='[Calculation_1021191257724944385]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[GrLivArea] + [TotalBsmtSF]' />
       </column>
       <column caption='Central Air' datatype='string' name='[CentralAir]' role='dimension' type='nominal' />
       <column caption='Enclosed Porch' datatype='integer' name='[EnclosedPorch]' role='measure' type='quantitative' />
@@ -1625,20 +1758,28 @@
       <column caption='Year Remod Add' datatype='integer' name='[YearRemodAdd]' role='dimension' type='quantitative' />
       <column caption='Yr Sold' datatype='integer' name='[YrSold]' role='dimension' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='Ames_Housing_Price_Data' datatype='table' name='[__tableau_internal_object_id__].[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.79661' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.20339' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.644068' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.355932' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Number of Bedrooms' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
-          <calculation class='tableau' formula='3' />
-        </column>
-        <column caption='Total Rooms Above Ground' datatype='real' name='[Parameter 2]' param-domain-type='list' role='measure' type='quantitative' value='3.0'>
-          <calculation class='tableau' formula='3.0' />
-        </column>
-        <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='727.99599799899954'>
-          <calculation class='tableau' formula='727.99599799899954' />
+        <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='206.1910955477739'>
+          <calculation class='tableau' formula='206.1910955477739' />
           <range max='1488.0' min='0.0' />
+        </column>
+        <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='2953.3096548274139'>
+          <calculation class='tableau' formula='2953.3096548274139' />
+          <range max='7814.0' min='334.0' />
+        </column>
+        <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='134012.25612806404'>
+          <calculation class='tableau' formula='134012.25612806404' />
+          <range max='215245.0' min='1300.0' />
+        </column>
+        <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='1976.0'>
+          <calculation class='tableau' formula='1976.0' />
+          <aliases>
+            <alias key='1872.0' value='1872' />
+          </aliases>
         </column>
       </datasource-dependencies>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -1753,27 +1894,46 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Number of Bedrooms' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
-              <calculation class='tableau' formula='3' />
-            </column>
-            <column caption='Total Rooms Above Ground' datatype='real' name='[Parameter 2]' param-domain-type='list' role='measure' type='quantitative' value='3.0'>
-              <calculation class='tableau' formula='3.0' />
-            </column>
-            <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='727.99599799899954'>
-              <calculation class='tableau' formula='727.99599799899954' />
+            <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='206.1910955477739'>
+              <calculation class='tableau' formula='206.1910955477739' />
               <range max='1488.0' min='0.0' />
+            </column>
+            <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='2953.3096548274139'>
+              <calculation class='tableau' formula='2953.3096548274139' />
+              <range max='7814.0' min='334.0' />
+            </column>
+            <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='134012.25612806404'>
+              <calculation class='tableau' formula='134012.25612806404' />
+              <range max='215245.0' min='1300.0' />
+            </column>
+            <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='1976.0'>
+              <calculation class='tableau' formula='1976.0' />
+              <aliases>
+                <alias key='1872.0' value='1872' />
+              </aliases>
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.130yxx80m9yg9o1h8611a0wi84e1'>
             <column caption='Predicted Price' datatype='real' name='[Calculation_1021191257689108480]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;predict_price&apos;,_arg1, _arg2, _arg3)[&apos;response&apos;]&quot;,[Parameters].[Parameter 1],[Parameters].[Parameter 2],[Parameters].[Parameter 3])'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;predict_price&apos;,_arg1, _arg2, _arg3, _arg4)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Parameter 5],[Parameters].[Parameter 6],[Parameters].[Parameter 3], [Parameters].[Parameter 7])'>
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
             <column-instance column='[Calculation_1021191257689108480]' derivation='User' name='[usr:Calculation_1021191257689108480:qk:1]' pivot='key' type='quantitative'>
               <table-calc ordering-field='' ordering-type='Field' />
             </column-instance>
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.130yxx80m9yg9o1h8611a0wi84e1].[none:Neighborhood:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Neighborhood:nk]' />
+              <groupfilter function='member' level='[none:Neighborhood:nk]' member='&quot;CollgCr&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.130yxx80m9yg9o1h8611a0wi84e1].[none:Neighborhood:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style />
@@ -1822,86 +1982,93 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card mode='compact' param='[Parameters].[Parameter 1]' size='38' type='parameter' />
-            <card mode='compact' param='[Parameters].[Parameter 2]' size='38' type='parameter' />
-            <card mode='slider' param='[Parameters].[Parameter 3]' size='72' type='parameter' />
-            <card mode='compact' param='[Parameters].[Parameter 4]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 3]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 5]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 6]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 7]' type='parameter' />
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.130yxx80m9yg9o1h8611a0wi84e1].[none:Neighborhood:nk]</field>
+            <field>[federated.130yxx80m9yg9o1h8611a0wi84e1].[none:RoofMatl:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
       <simple-id uuid='{540C2598-132A-4368-AE3E-DDC7353980EB}' />
     </window>
   </windows>
   <thumbnails>
-    <thumbnail height='72' name='Sheet 1' width='252'>
-      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
+    <thumbnail height='72' name='Sheet 1' width='192'>
+      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
+      b71YfSPJdocIAAAAAElFTkSuQmCC
     </thumbnail>
   </thumbnails>
 </workbook>
