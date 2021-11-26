@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 def cleaning(dataframe):
     ## Replace all null values based on context
     housing = dataframe
+  
     ## LotFrontage -- replace with mean of the column
     housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)
     housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)
@@ -61,7 +62,7 @@ def cleaning(dataframe):
 
     ## Add a total baths feature and remove the original columns
     housing['TotalBath'] = housing['FullBath'] + (housing['HalfBath']*0.5) + housing['BsmtFullBath'] + (housing['BsmtHalfBath']*0.5)
-    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath', 'TotalBath']
+    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath']
     housing.drop(columns= baths_drop, inplace=True, axis =1)
 
     ## Add ratio for unfinished basement space -- Make sure this is always before "TotalLivArea" is created or columns will be dropped
@@ -117,6 +118,9 @@ def cleaning(dataframe):
 
     housing = housing[~housing.PID.isin([904300150, 535383070, 905426030, 528142130])]
 
+    # duplicate PID 909276070, removing
+    housing = housing.drop_duplicates(subset=['PID'], keep='first', ignore_index='True')
+    
     return housing
 
 
@@ -153,9 +157,9 @@ def scale_data(dataframe, scaler):
     dataframe = dataframe.reset_index() #duplicated index values in csv need to reset
     dataframe = dataframe.drop('index', axis = 1) # drop original index with duplicates
     dataframe_num = dataframe[['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea',
-                            'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt',
-                            'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch',
-                            'ScreenPorch', 'Bsmt_Unfin_Ratio', 'TotalLivArea']] # Select columns that were used to train the scaler
+                            'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt', 'GarageArea', 
+                            'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 
+                            'TotalBath', 'Bsmt_Unfin_Ratio', 'TotalLivArea']] # Select columns that were used to train the scaler
 
     ## Drop the original columns from the main dataframe
     dataframe.drop(columns = dataframe_num.columns, axis = 1, inplace =True)
