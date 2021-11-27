@@ -61,7 +61,7 @@ def cleaning(dataframe):
 
     ## Add a total baths feature and remove the original columns
     housing['TotalBath'] = housing['FullBath'] + (housing['HalfBath']*0.5) + housing['BsmtFullBath'] + (housing['BsmtHalfBath']*0.5)
-    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath', 'TotalBath']
+    baths_drop = ['HalfBath', 'FullBath', 'BsmtFullBath', 'BsmtHalfBath']
     housing.drop(columns= baths_drop, inplace=True, axis =1)
 
     ## Add ratio for unfinished basement space -- Make sure this is always before "TotalLivArea" is created or columns will be dropped
@@ -117,6 +117,11 @@ def cleaning(dataframe):
 
     housing = housing[~housing.PID.isin([904300150, 535383070, 905426030, 528142130])]
 
+    housing = housing[housing['SaleCondition'] == 'Normal']
+
+    housing = housing.drop_duplicates(subset=['PID'], keep='first', ignore_index=False)
+
+
     return housing
 
 
@@ -155,7 +160,7 @@ def scale_data(dataframe, scaler):
     dataframe_num = dataframe[['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea',
                             'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt',
                             'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch',
-                            'ScreenPorch', 'Bsmt_Unfin_Ratio', 'TotalLivArea']] # Select columns that were used to train the scaler
+                            'ScreenPorch', 'Bsmt_Unfin_Ratio', 'TotalLivArea', 'TotalBath']] # Select columns that were used to train the scaler
 
     ## Drop the original columns from the main dataframe
     dataframe.drop(columns = dataframe_num.columns, axis = 1, inplace =True)
@@ -216,12 +221,12 @@ def initiate_data(housing):
 
     ## Separate out training and testing data
     ## Separate out train and test data for linear model
-    train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2)
+    train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2, random_state = 0)
     train_data_linear = train_data_linear.copy()
     test_data_linear = test_data_linear.copy()
 
     ## Separate out train and test data for tree model
-    train_data_tree, test_data_tree = train_test_split(housing_tree, test_size=0.2)
+    train_data_tree, test_data_tree = train_test_split(housing_tree, test_size=0.2, random_state = 0)
     train_data_tree = train_data_tree.copy()
     test_data_tree = test_data_tree.copy()
 
