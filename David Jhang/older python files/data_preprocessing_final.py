@@ -239,6 +239,7 @@ def initiate_data(housing):
     scale_trainer_num = scale_trainer.select_dtypes(['int64', 'float64']) # Select numeric data types
     scale_trainer_num = scale_trainer_num.drop(['PID', 'SalePrice'], axis = 1) ## Drop PID and saleprice since they should not be scaled
 
+    
     ## Set up and train the scaler
     scaler = MinMaxScaler()
     scaler.fit(scale_trainer_num)
