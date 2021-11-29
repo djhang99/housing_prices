@@ -160,7 +160,7 @@ def scale_data(dataframe, scaler):
     dataframe_num = dataframe[['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea',
                             'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt',
                             'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch',
-                            'ScreenPorch', 'Bsmt_Unfin_Ratio', 'TotalLivArea', 'TotalBath']] # Select columns that were used to train the scaler
+                            'ScreenPorch', 'TotalBath', 'Bsmt_Unfin_Ratio', 'TotalLivArea']] # Select columns that were used to train the scaler
 
     ## Drop the original columns from the main dataframe
     dataframe.drop(columns = dataframe_num.columns, axis = 1, inplace =True)
