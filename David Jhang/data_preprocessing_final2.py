@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 def cleaning(dataframe):
     ## Replace all null values based on context
     housing = dataframe
-  
     ## LotFrontage -- replace with mean of the column
     housing['LotFrontage'].fillna(value = housing['LotFrontage'].mean(), inplace = True)
     housing['GarageYrBlt'].fillna(value = housing['GarageYrBlt'].mean(), inplace=True)
@@ -118,9 +117,11 @@ def cleaning(dataframe):
 
     housing = housing[~housing.PID.isin([904300150, 535383070, 905426030, 528142130])]
 
-    # duplicate PID 909276070, removing
-    housing = housing.drop_duplicates(subset=['PID'], keep='first', ignore_index='True')
-    
+    housing = housing[housing['SaleCondition'] == 'Normal']
+
+    housing = housing.drop_duplicates(subset=['PID'], keep='first', ignore_index=False)
+
+
     return housing
 
 
@@ -157,9 +158,9 @@ def scale_data(dataframe, scaler):
     dataframe = dataframe.reset_index() #duplicated index values in csv need to reset
     dataframe = dataframe.drop('index', axis = 1) # drop original index with duplicates
     dataframe_num = dataframe[['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea',
-                            'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt', 'GarageArea', 
-                            'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 
-                            'TotalBath', 'Bsmt_Unfin_Ratio', 'TotalLivArea']] # Select columns that were used to train the scaler
+                            'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt',
+                            'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch',
+                            'ScreenPorch', 'TotalBath', 'Bsmt_Unfin_Ratio', 'TotalLivArea']] # Select columns that were used to train the scaler
 
     ## Drop the original columns from the main dataframe
     dataframe.drop(columns = dataframe_num.columns, axis = 1, inplace =True)
@@ -220,12 +221,12 @@ def initiate_data(housing):
 
     ## Separate out training and testing data
     ## Separate out train and test data for linear model
-    train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2, random_state=0)
+    train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2, random_state = 0)
     train_data_linear = train_data_linear.copy()
     test_data_linear = test_data_linear.copy()
 
     ## Separate out train and test data for tree model
-    train_data_tree, test_data_tree = train_test_split(housing_tree, test_size=0.2, random_state=0)
+    train_data_tree, test_data_tree = train_test_split(housing_tree, test_size=0.2, random_state = 0)
     train_data_tree = train_data_tree.copy()
     test_data_tree = test_data_tree.copy()
 
