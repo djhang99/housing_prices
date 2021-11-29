@@ -220,12 +220,12 @@ def initiate_data(housing):
 
     ## Separate out training and testing data
     ## Separate out train and test data for linear model
-    train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2)
+    train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2, random_state=0)
     train_data_linear = train_data_linear.copy()
     test_data_linear = test_data_linear.copy()
 
     ## Separate out train and test data for tree model
-    train_data_tree, test_data_tree = train_test_split(housing_tree, test_size=0.2)
+    train_data_tree, test_data_tree = train_test_split(housing_tree, test_size=0.2, random_state=0)
     train_data_tree = train_data_tree.copy()
     test_data_tree = test_data_tree.copy()
 
