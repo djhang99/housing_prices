@@ -119,6 +119,9 @@ def cleaning(dataframe):
 
     housing = housing[housing['SaleCondition'] == 'Normal']
 
+    housing = housing.drop_duplicates(subset=['PID'], keep='first', ignore_index=False)
+
+
     return housing
 
 
@@ -135,40 +138,40 @@ def dummify(dataframe):
 
     category = pd.concat([category, housing_num2cat.astype(str)], axis = 1)
 
-    ## Dummify variables 
+    ## Dummify variables
     cat_dum = pd.get_dummies(category, drop_first = True)
 
-    ## Drop objects out of dataframe 
+    ## Drop objects out of dataframe
     drop = list(category.columns)
     for column in housing_num2cat.columns:
         drop.append(column)
     dataframe.drop(columns = drop, axis = 1, inplace = True)
 
-    ## Merge dummified back into original dataframe 
-    dataframe = pd.concat([dataframe, cat_dum], axis = 1) 
+    ## Merge dummified back into original dataframe
+    dataframe = pd.concat([dataframe, cat_dum], axis = 1)
     return dataframe
 
 
 
 def scale_data(dataframe, scaler):
-    ## Choose the columns that need to be scaled 
+    ## Choose the columns that need to be scaled
     dataframe = dataframe.reset_index() #duplicated index values in csv need to reset
     dataframe = dataframe.drop('index', axis = 1) # drop original index with duplicates
     dataframe_num = dataframe[['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea',
                             'BedroomAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt',
                             'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch',
-                            'ScreenPorch', 'Bsmt_Unfin_Ratio', 'TotalLivArea','TotalBath' ]] # Select columns that were used to train the scaler
+                            'ScreenPorch', 'Bsmt_Unfin_Ratio', 'TotalLivArea', 'TotalBath']] # Select columns that were used to train the scaler
 
-    ## Drop the original columns from the main dataframe 
+    ## Drop the original columns from the main dataframe
     dataframe.drop(columns = dataframe_num.columns, axis = 1, inplace =True)
 
     ## Scale the new columns and make dataframe
     num_scaled = scaler.transform(dataframe_num)
     dataframe_num_scaled = pd.DataFrame(num_scaled, columns = dataframe_num.columns)
 
-    ## Merge back into old dataframe 
+    ## Merge back into old dataframe
     dataframe = pd.concat([dataframe, dataframe_num_scaled], axis=1)
-    
+
     ## Separate out target
     target = np.log(dataframe['SalePrice'])
     dataframe.drop('SalePrice', axis=1, inplace = True)
@@ -191,32 +194,32 @@ def ord_encoding(dataframe):
 
     category = pd.concat([category, housing_num2cat.astype(str)], axis = 1)
 
-    ## Ord_Encode variables 
+    ## Ord_Encode variables
     oe = OrdinalEncoder()
     cat_ord_enc = oe.fit_transform(category)
     cat_ord_enc_df = pd.DataFrame(cat_ord_enc, columns = category.columns)
 
-    ## Drop objects out of dataframe 
+    ## Drop objects out of dataframe
     drop = list(category.columns)
     for column in housing_num2cat.columns:
         drop.append(column)
     dataframe.drop(columns = drop, axis = 1, inplace = True)
 
-    ## Merge dummified back into original dataframe 
-    dataframe = pd.concat([dataframe, cat_ord_enc_df], axis = 1) 
-    
+    ## Merge dummified back into original dataframe
+    dataframe = pd.concat([dataframe, cat_ord_enc_df], axis = 1)
+
     return dataframe
 
-def initiate_data(housing): 
+def initiate_data(housing):
 
     ## Do initial cleaning and set up
-    ## For linear model it will dummify the variables 
-    ## For the tree model datasets it will use ordinal encoding 
+    ## For linear model it will dummify the variables
+    ## For the tree model datasets it will use ordinal encoding
     housing = cleaning(housing)
     housing_linear = dummify(housing)
     housing_tree = ord_encoding(housing)
 
-    ## Separate out training and testing data 
+    ## Separate out training and testing data
     ## Separate out train and test data for linear model
     train_data_linear, test_data_linear = train_test_split(housing_linear, test_size=0.2, random_state = 0)
     train_data_linear = train_data_linear.copy()
@@ -228,16 +231,16 @@ def initiate_data(housing):
     test_data_tree = test_data_tree.copy()
 
 
-    ## Set up the scaler using only training data to be passed into the scaling function 
+    ## Set up the scaler using only training data to be passed into the scaling function
 
-    ## First need to train the scaler 
+    ## First need to train the scaler
     scale_trainer = train_data_linear.copy()
     scale_trainer = scale_trainer.reset_index() #duplicated index values in csv need to reset
     scale_trainer = scale_trainer.drop('index', axis = 1) # drop original index with duplicates
     scale_trainer_num = scale_trainer.select_dtypes(['int64', 'float64']) # Select numeric data types
-    scale_trainer_num = scale_trainer_num.drop(['PID', 'SalePrice'], axis = 1) ## Drop PID and saleprice since they should not be scaled 
+    scale_trainer_num = scale_trainer_num.drop(['PID', 'SalePrice'], axis = 1) ## Drop PID and saleprice since they should not be scaled
 
-    ## Set up and train the scaler 
+    ## Set up and train the scaler
     scaler = MinMaxScaler()
     scaler.fit(scale_trainer_num)
 
@@ -253,6 +256,6 @@ def initiate_data(housing):
     train_data_tree, train_target_tree = scale_data(train_data_tree, scaler)
     test_data_tree, test_target_tree = scale_data(test_data_tree, scaler)
 
-    ## Return all data 
+    ## Return all data
 
     return train_data_linear, train_target_linear, test_data_linear, test_target_linear, train_data_tree, train_target_tree, test_data_tree, test_target_tree
