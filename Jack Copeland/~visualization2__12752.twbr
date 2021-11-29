@@ -1,0 +1,2003 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.1018.0949                               -->
+<workbook source-build='2021.3.3 (20213.21.1018.0949)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Overall Quality' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3.0'>
+        <calculation class='tableau' formula='3.0' />
+        <members>
+          <member value='1.0' />
+          <member value='2.0' />
+          <member value='3.0' />
+          <member value='4.0' />
+          <member value='5.0' />
+          <member value='6.0' />
+          <member value='7.0' />
+          <member value='8.0' />
+          <member value='9.0' />
+          <member value='10.0' />
+        </members>
+      </column>
+      <column caption='Lot Area' datatype='real' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='37260.740370185093'>
+        <calculation class='tableau' formula='37260.740370185093' />
+        <range max='215245.0' min='1300.0' />
+      </column>
+      <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;BrDale&quot;'>
+        <calculation class='tableau' formula='&quot;BrDale&quot;' />
+        <members>
+          <member value='&quot;Blmngtn&quot;' />
+          <member value='&quot;Blueste&quot;' />
+          <member value='&quot;BrDale&quot;' />
+          <member value='&quot;BrkSide&quot;' />
+          <member value='&quot;ClearCr&quot;' />
+          <member value='&quot;CollgCr&quot;' />
+          <member value='&quot;Crawfor&quot;' />
+          <member value='&quot;Edwards&quot;' />
+          <member value='&quot;Gilbert&quot;' />
+          <member value='&quot;Greens&quot;' />
+          <member value='&quot;GrnHill&quot;' />
+          <member value='&quot;IDOTRR&quot;' />
+          <member value='&quot;Landmrk&quot;' />
+          <member value='&quot;MeadowV&quot;' />
+          <member value='&quot;Mitchel&quot;' />
+          <member value='&quot;NAmes&quot;' />
+          <member value='&quot;NoRidge&quot;' />
+          <member value='&quot;NPkVill&quot;' />
+          <member value='&quot;NridgHt&quot;' />
+          <member value='&quot;NWAmes&quot;' />
+          <member value='&quot;OldTown&quot;' />
+          <member value='&quot;Sawyer&quot;' />
+          <member value='&quot;SawyerW&quot;' />
+          <member value='&quot;Somerst&quot;' />
+          <member value='&quot;StoneBr&quot;' />
+          <member value='&quot;SWISU&quot;' />
+          <member value='&quot;Timber&quot;' />
+          <member value='&quot;Veenker&quot;' />
+        </members>
+      </column>
+      <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='1994.0'>
+        <calculation class='tableau' formula='1994.0' />
+        <aliases>
+          <alias key='1872.0' value='1872' />
+        </aliases>
+        <members>
+          <member alias='1872' value='1872.0' />
+          <member value='1875.0' />
+          <member value='1879.0' />
+          <member value='1880.0' />
+          <member value='1882.0' />
+          <member value='1885.0' />
+          <member value='1890.0' />
+          <member value='1892.0' />
+          <member value='1893.0' />
+          <member value='1895.0' />
+          <member value='1898.0' />
+          <member value='1900.0' />
+          <member value='1902.0' />
+          <member value='1904.0' />
+          <member value='1905.0' />
+          <member value='1906.0' />
+          <member value='1908.0' />
+          <member value='1910.0' />
+          <member value='1912.0' />
+          <member value='1913.0' />
+          <member value='1914.0' />
+          <member value='1915.0' />
+          <member value='1916.0' />
+          <member value='1917.0' />
+          <member value='1918.0' />
+          <member value='1919.0' />
+          <member value='1920.0' />
+          <member value='1921.0' />
+          <member value='1922.0' />
+          <member value='1923.0' />
+          <member value='1924.0' />
+          <member value='1925.0' />
+          <member value='1926.0' />
+          <member value='1927.0' />
+          <member value='1928.0' />
+          <member value='1929.0' />
+          <member value='1930.0' />
+          <member value='1931.0' />
+          <member value='1932.0' />
+          <member value='1934.0' />
+          <member value='1935.0' />
+          <member value='1936.0' />
+          <member value='1937.0' />
+          <member value='1938.0' />
+          <member value='1939.0' />
+          <member value='1940.0' />
+          <member value='1941.0' />
+          <member value='1942.0' />
+          <member value='1945.0' />
+          <member value='1946.0' />
+          <member value='1947.0' />
+          <member value='1948.0' />
+          <member value='1949.0' />
+          <member value='1950.0' />
+          <member value='1951.0' />
+          <member value='1952.0' />
+          <member value='1953.0' />
+          <member value='1954.0' />
+          <member value='1955.0' />
+          <member value='1956.0' />
+          <member value='1957.0' />
+          <member value='1958.0' />
+          <member value='1959.0' />
+          <member value='1960.0' />
+          <member value='1961.0' />
+          <member value='1962.0' />
+          <member value='1963.0' />
+          <member value='1964.0' />
+          <member value='1965.0' />
+          <member value='1966.0' />
+          <member value='1967.0' />
+          <member value='1968.0' />
+          <member value='1969.0' />
+          <member value='1970.0' />
+          <member value='1971.0' />
+          <member value='1972.0' />
+          <member value='1973.0' />
+          <member value='1974.0' />
+          <member value='1975.0' />
+          <member value='1976.0' />
+          <member value='1977.0' />
+          <member value='1978.0' />
+          <member value='1979.0' />
+          <member value='1980.0' />
+          <member value='1981.0' />
+          <member value='1982.0' />
+          <member value='1983.0' />
+          <member value='1984.0' />
+          <member value='1985.0' />
+          <member value='1986.0' />
+          <member value='1987.0' />
+          <member value='1988.0' />
+          <member value='1989.0' />
+          <member value='1990.0' />
+          <member value='1991.0' />
+          <member value='1992.0' />
+          <member value='1993.0' />
+          <member value='1994.0' />
+          <member value='1995.0' />
+          <member value='1996.0' />
+          <member value='1997.0' />
+          <member value='1998.0' />
+          <member value='1999.0' />
+          <member value='2000.0' />
+          <member value='2001.0' />
+          <member value='2002.0' />
+          <member value='2003.0' />
+          <member value='2004.0' />
+          <member value='2005.0' />
+          <member value='2006.0' />
+          <member value='2007.0' />
+          <member value='2008.0' />
+          <member value='2009.0' />
+          <member value='2010.0' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Ames_Housing_Price_Data (Ames_Housing_Price_Data)' inline='true' name='federated.130yxx80m9yg9o1h8611a0wi84e1' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Ames_Housing_Price_Data' name='excel-direct.1351g5708r4frf117o6p50yezbjw'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/jackc/OneDrive/Desktop/data_science_bootcamp/Machine Learning Project/Housing_Prices/data/Ames_Housing_Price_Data.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.1351g5708r4frf117o6p50yezbjw' name='Ames_Housing_Price_Data' table='[Ames_Housing_Price_Data$]' type='table'>
+          <columns gridOrigin='A1:CD2581:no:A1:CD2581:0' header='yes' outcome='6'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='PID' ordinal='1' />
+            <column datatype='integer' name='GrLivArea' ordinal='2' />
+            <column datatype='integer' name='SalePrice' ordinal='3' />
+            <column datatype='integer' name='MSSubClass' ordinal='4' />
+            <column datatype='string' name='MSZoning' ordinal='5' />
+            <column datatype='integer' name='LotFrontage' ordinal='6' />
+            <column datatype='integer' name='LotArea' ordinal='7' />
+            <column datatype='string' name='Street' ordinal='8' />
+            <column datatype='string' name='Alley' ordinal='9' />
+            <column datatype='string' name='LotShape' ordinal='10' />
+            <column datatype='string' name='LandContour' ordinal='11' />
+            <column datatype='string' name='Utilities' ordinal='12' />
+            <column datatype='string' name='LotConfig' ordinal='13' />
+            <column datatype='string' name='LandSlope' ordinal='14' />
+            <column datatype='string' name='Neighborhood' ordinal='15' />
+            <column datatype='string' name='Condition1' ordinal='16' />
+            <column datatype='string' name='Condition2' ordinal='17' />
+            <column datatype='string' name='BldgType' ordinal='18' />
+            <column datatype='string' name='HouseStyle' ordinal='19' />
+            <column datatype='integer' name='OverallQual' ordinal='20' />
+            <column datatype='integer' name='OverallCond' ordinal='21' />
+            <column datatype='integer' name='YearBuilt' ordinal='22' />
+            <column datatype='integer' name='YearRemodAdd' ordinal='23' />
+            <column datatype='string' name='RoofStyle' ordinal='24' />
+            <column datatype='string' name='RoofMatl' ordinal='25' />
+            <column datatype='string' name='Exterior1st' ordinal='26' />
+            <column datatype='string' name='Exterior2nd' ordinal='27' />
+            <column datatype='string' name='MasVnrType' ordinal='28' />
+            <column datatype='integer' name='MasVnrArea' ordinal='29' />
+            <column datatype='string' name='ExterQual' ordinal='30' />
+            <column datatype='string' name='ExterCond' ordinal='31' />
+            <column datatype='string' name='Foundation' ordinal='32' />
+            <column datatype='string' name='BsmtQual' ordinal='33' />
+            <column datatype='string' name='BsmtCond' ordinal='34' />
+            <column datatype='string' name='BsmtExposure' ordinal='35' />
+            <column datatype='string' name='BsmtFinType1' ordinal='36' />
+            <column datatype='integer' name='BsmtFinSF1' ordinal='37' />
+            <column datatype='string' name='BsmtFinType2' ordinal='38' />
+            <column datatype='integer' name='BsmtFinSF2' ordinal='39' />
+            <column datatype='integer' name='BsmtUnfSF' ordinal='40' />
+            <column datatype='integer' name='TotalBsmtSF' ordinal='41' />
+            <column datatype='string' name='Heating' ordinal='42' />
+            <column datatype='string' name='HeatingQC' ordinal='43' />
+            <column datatype='string' name='CentralAir' ordinal='44' />
+            <column datatype='string' name='Electrical' ordinal='45' />
+            <column datatype='integer' name='1stFlrSF' ordinal='46' />
+            <column datatype='integer' name='2ndFlrSF' ordinal='47' />
+            <column datatype='integer' name='LowQualFinSF' ordinal='48' />
+            <column datatype='integer' name='BsmtFullBath' ordinal='49' />
+            <column datatype='integer' name='BsmtHalfBath' ordinal='50' />
+            <column datatype='integer' name='FullBath' ordinal='51' />
+            <column datatype='integer' name='HalfBath' ordinal='52' />
+            <column datatype='integer' name='BedroomAbvGr' ordinal='53' />
+            <column datatype='integer' name='KitchenAbvGr' ordinal='54' />
+            <column datatype='string' name='KitchenQual' ordinal='55' />
+            <column datatype='integer' name='TotRmsAbvGrd' ordinal='56' />
+            <column datatype='string' name='Functional' ordinal='57' />
+            <column datatype='integer' name='Fireplaces' ordinal='58' />
+            <column datatype='string' name='FireplaceQu' ordinal='59' />
+            <column datatype='string' name='GarageType' ordinal='60' />
+            <column datatype='integer' name='GarageYrBlt' ordinal='61' />
+            <column datatype='string' name='GarageFinish' ordinal='62' />
+            <column datatype='integer' name='GarageCars' ordinal='63' />
+            <column datatype='integer' name='GarageArea' ordinal='64' />
+            <column datatype='string' name='GarageQual' ordinal='65' />
+            <column datatype='string' name='GarageCond' ordinal='66' />
+            <column datatype='string' name='PavedDrive' ordinal='67' />
+            <column datatype='integer' name='WoodDeckSF' ordinal='68' />
+            <column datatype='integer' name='OpenPorchSF' ordinal='69' />
+            <column datatype='integer' name='EnclosedPorch' ordinal='70' />
+            <column datatype='integer' name='3SsnPorch' ordinal='71' />
+            <column datatype='integer' name='ScreenPorch' ordinal='72' />
+            <column datatype='integer' name='PoolArea' ordinal='73' />
+            <column datatype='string' name='PoolQC' ordinal='74' />
+            <column datatype='string' name='Fence' ordinal='75' />
+            <column datatype='string' name='MiscFeature' ordinal='76' />
+            <column datatype='integer' name='MiscVal' ordinal='77' />
+            <column datatype='integer' name='MoSold' ordinal='78' />
+            <column datatype='integer' name='YrSold' ordinal='79' />
+            <column datatype='string' name='SaleType' ordinal='80' />
+            <column datatype='string' name='SaleCondition' ordinal='81' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.1351g5708r4frf117o6p50yezbjw' name='Ames_Housing_Price_Data' table='[Ames_Housing_Price_Data$]' type='table'>
+          <columns gridOrigin='A1:CD2581:no:A1:CD2581:0' header='yes' outcome='6'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='PID' ordinal='1' />
+            <column datatype='integer' name='GrLivArea' ordinal='2' />
+            <column datatype='integer' name='SalePrice' ordinal='3' />
+            <column datatype='integer' name='MSSubClass' ordinal='4' />
+            <column datatype='string' name='MSZoning' ordinal='5' />
+            <column datatype='integer' name='LotFrontage' ordinal='6' />
+            <column datatype='integer' name='LotArea' ordinal='7' />
+            <column datatype='string' name='Street' ordinal='8' />
+            <column datatype='string' name='Alley' ordinal='9' />
+            <column datatype='string' name='LotShape' ordinal='10' />
+            <column datatype='string' name='LandContour' ordinal='11' />
+            <column datatype='string' name='Utilities' ordinal='12' />
+            <column datatype='string' name='LotConfig' ordinal='13' />
+            <column datatype='string' name='LandSlope' ordinal='14' />
+            <column datatype='string' name='Neighborhood' ordinal='15' />
+            <column datatype='string' name='Condition1' ordinal='16' />
+            <column datatype='string' name='Condition2' ordinal='17' />
+            <column datatype='string' name='BldgType' ordinal='18' />
+            <column datatype='string' name='HouseStyle' ordinal='19' />
+            <column datatype='integer' name='OverallQual' ordinal='20' />
+            <column datatype='integer' name='OverallCond' ordinal='21' />
+            <column datatype='integer' name='YearBuilt' ordinal='22' />
+            <column datatype='integer' name='YearRemodAdd' ordinal='23' />
+            <column datatype='string' name='RoofStyle' ordinal='24' />
+            <column datatype='string' name='RoofMatl' ordinal='25' />
+            <column datatype='string' name='Exterior1st' ordinal='26' />
+            <column datatype='string' name='Exterior2nd' ordinal='27' />
+            <column datatype='string' name='MasVnrType' ordinal='28' />
+            <column datatype='integer' name='MasVnrArea' ordinal='29' />
+            <column datatype='string' name='ExterQual' ordinal='30' />
+            <column datatype='string' name='ExterCond' ordinal='31' />
+            <column datatype='string' name='Foundation' ordinal='32' />
+            <column datatype='string' name='BsmtQual' ordinal='33' />
+            <column datatype='string' name='BsmtCond' ordinal='34' />
+            <column datatype='string' name='BsmtExposure' ordinal='35' />
+            <column datatype='string' name='BsmtFinType1' ordinal='36' />
+            <column datatype='integer' name='BsmtFinSF1' ordinal='37' />
+            <column datatype='string' name='BsmtFinType2' ordinal='38' />
+            <column datatype='integer' name='BsmtFinSF2' ordinal='39' />
+            <column datatype='integer' name='BsmtUnfSF' ordinal='40' />
+            <column datatype='integer' name='TotalBsmtSF' ordinal='41' />
+            <column datatype='string' name='Heating' ordinal='42' />
+            <column datatype='string' name='HeatingQC' ordinal='43' />
+            <column datatype='string' name='CentralAir' ordinal='44' />
+            <column datatype='string' name='Electrical' ordinal='45' />
+            <column datatype='integer' name='1stFlrSF' ordinal='46' />
+            <column datatype='integer' name='2ndFlrSF' ordinal='47' />
+            <column datatype='integer' name='LowQualFinSF' ordinal='48' />
+            <column datatype='integer' name='BsmtFullBath' ordinal='49' />
+            <column datatype='integer' name='BsmtHalfBath' ordinal='50' />
+            <column datatype='integer' name='FullBath' ordinal='51' />
+            <column datatype='integer' name='HalfBath' ordinal='52' />
+            <column datatype='integer' name='BedroomAbvGr' ordinal='53' />
+            <column datatype='integer' name='KitchenAbvGr' ordinal='54' />
+            <column datatype='string' name='KitchenQual' ordinal='55' />
+            <column datatype='integer' name='TotRmsAbvGrd' ordinal='56' />
+            <column datatype='string' name='Functional' ordinal='57' />
+            <column datatype='integer' name='Fireplaces' ordinal='58' />
+            <column datatype='string' name='FireplaceQu' ordinal='59' />
+            <column datatype='string' name='GarageType' ordinal='60' />
+            <column datatype='integer' name='GarageYrBlt' ordinal='61' />
+            <column datatype='string' name='GarageFinish' ordinal='62' />
+            <column datatype='integer' name='GarageCars' ordinal='63' />
+            <column datatype='integer' name='GarageArea' ordinal='64' />
+            <column datatype='string' name='GarageQual' ordinal='65' />
+            <column datatype='string' name='GarageCond' ordinal='66' />
+            <column datatype='string' name='PavedDrive' ordinal='67' />
+            <column datatype='integer' name='WoodDeckSF' ordinal='68' />
+            <column datatype='integer' name='OpenPorchSF' ordinal='69' />
+            <column datatype='integer' name='EnclosedPorch' ordinal='70' />
+            <column datatype='integer' name='3SsnPorch' ordinal='71' />
+            <column datatype='integer' name='ScreenPorch' ordinal='72' />
+            <column datatype='integer' name='PoolArea' ordinal='73' />
+            <column datatype='string' name='PoolQC' ordinal='74' />
+            <column datatype='string' name='Fence' ordinal='75' />
+            <column datatype='string' name='MiscFeature' ordinal='76' />
+            <column datatype='integer' name='MiscVal' ordinal='77' />
+            <column datatype='integer' name='MoSold' ordinal='78' />
+            <column datatype='integer' name='YrSold' ordinal='79' />
+            <column datatype='string' name='SaleType' ordinal='80' />
+            <column datatype='string' name='SaleCondition' ordinal='81' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:CD2581:no:A1:CD2581:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PID]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>PID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GrLivArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GrLivArea]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GrLivArea</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SalePrice</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SalePrice]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>SalePrice</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MSSubClass</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MSSubClass]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MSSubClass</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MSZoning</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MSZoning]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MSZoning</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotFrontage</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LotFrontage]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LotFrontage</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LotArea]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LotArea</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Street</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Street]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Street</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Alley</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Alley]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Alley</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotShape</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LotShape]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LotShape</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LandContour</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LandContour]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LandContour</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Utilities</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Utilities]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Utilities</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotConfig</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LotConfig]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LotConfig</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LandSlope</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LandSlope]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LandSlope</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Neighborhood</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Neighborhood]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Neighborhood</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Condition1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Condition1]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Condition1</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Condition2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Condition2]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Condition2</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BldgType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BldgType]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BldgType</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HouseStyle</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[HouseStyle]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>HouseStyle</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OverallQual</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OverallQual]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>OverallQual</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OverallCond</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OverallCond]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>OverallCond</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearBuilt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearBuilt]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>YearBuilt</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearRemodAdd</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearRemodAdd]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>YearRemodAdd</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RoofStyle</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RoofStyle]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>RoofStyle</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RoofMatl</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RoofMatl]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>RoofMatl</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Exterior1st</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Exterior1st]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Exterior1st</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Exterior2nd</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Exterior2nd]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Exterior2nd</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MasVnrType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MasVnrType]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MasVnrType</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MasVnrArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MasVnrArea]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MasVnrArea</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ExterQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ExterQual]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>ExterQual</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ExterCond</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ExterCond]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>ExterCond</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Foundation</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Foundation]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Foundation</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtQual]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtQual</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtCond</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtCond]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtCond</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtExposure</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtExposure]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtExposure</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinType1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtFinType1]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtFinType1</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinSF1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtFinSF1]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtFinSF1</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinType2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtFinType2]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtFinType2</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinSF2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtFinSF2]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtFinSF2</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtUnfSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtUnfSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtUnfSF</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotalBsmtSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TotalBsmtSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>TotalBsmtSF</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Heating</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Heating]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Heating</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HeatingQC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[HeatingQC]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>HeatingQC</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CentralAir</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CentralAir]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>CentralAir</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Electrical</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Electrical]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Electrical</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>1stFlrSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[1stFlrSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>1stFlrSF</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2ndFlrSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[2ndFlrSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>2ndFlrSF</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LowQualFinSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LowQualFinSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>LowQualFinSF</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFullBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtFullBath]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtFullBath</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtHalfBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtHalfBath]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BsmtHalfBath</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FullBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FullBath]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>FullBath</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HalfBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HalfBath]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>HalfBath</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BedroomAbvGr</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BedroomAbvGr]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>BedroomAbvGr</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>KitchenAbvGr</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[KitchenAbvGr]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>KitchenAbvGr</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>KitchenQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[KitchenQual]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>KitchenQual</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotRmsAbvGrd</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TotRmsAbvGrd]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>TotRmsAbvGrd</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Functional</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Functional]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Functional</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fireplaces</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fireplaces]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Fireplaces</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FireplaceQu</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FireplaceQu]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>FireplaceQu</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageType]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageType</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageYrBlt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GarageYrBlt]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageYrBlt</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageFinish</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageFinish]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageFinish</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageCars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GarageCars]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageCars</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GarageArea]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageArea</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageQual]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageQual</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageCond</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageCond]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>GarageCond</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PavedDrive</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PavedDrive]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>PavedDrive</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WoodDeckSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WoodDeckSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>WoodDeckSF</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OpenPorchSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OpenPorchSF]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>OpenPorchSF</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EnclosedPorch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EnclosedPorch]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>EnclosedPorch</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>3SsnPorch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[3SsnPorch]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>3SsnPorch</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ScreenPorch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ScreenPorch]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>ScreenPorch</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoolArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PoolArea]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>PoolArea</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoolQC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PoolQC]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>PoolQC</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fence</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Fence]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>Fence</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MiscFeature</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MiscFeature]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MiscFeature</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MiscVal</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MiscVal]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MiscVal</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MoSold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MoSold]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>MoSold</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YrSold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YrSold]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>YrSold</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SaleType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SaleType]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>SaleType</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SaleCondition</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SaleCondition]</local-name>
+            <parent-name>[Ames_Housing_Price_Data]</parent-name>
+            <remote-alias>SaleCondition</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Bedroom Abv Gr' datatype='integer' name='[BedroomAbvGr]' role='measure' type='quantitative' />
+      <column caption='Bldg Type' datatype='string' name='[BldgType]' role='dimension' type='nominal' />
+      <column caption='Bsmt Cond' datatype='string' name='[BsmtCond]' role='dimension' type='nominal' />
+      <column caption='Bsmt Exposure' datatype='string' name='[BsmtExposure]' role='dimension' type='nominal' />
+      <column caption='Bsmt Full Bath' datatype='integer' name='[BsmtFullBath]' role='measure' type='quantitative' />
+      <column caption='Bsmt Half Bath' datatype='integer' name='[BsmtHalfBath]' role='measure' type='quantitative' />
+      <column caption='Bsmt Qual' datatype='string' name='[BsmtQual]' role='dimension' type='nominal' />
+      <column caption='Bsmt Unf SF' datatype='integer' name='[BsmtUnfSF]' role='measure' type='quantitative' />
+      <column caption='Total Living Area' datatype='integer' name='[Calculation_1021191257724944385]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[GrLivArea] + [TotalBsmtSF]' />
+      </column>
+      <column caption='Central Air' datatype='string' name='[CentralAir]' role='dimension' type='nominal' />
+      <column caption='Enclosed Porch' datatype='integer' name='[EnclosedPorch]' role='measure' type='quantitative' />
+      <column caption='Exter Cond' datatype='string' name='[ExterCond]' role='dimension' type='nominal' />
+      <column caption='Exter Qual' datatype='string' name='[ExterQual]' role='dimension' type='nominal' />
+      <column caption='Fireplace Qu' datatype='string' name='[FireplaceQu]' role='dimension' type='nominal' />
+      <column caption='Full Bath' datatype='integer' name='[FullBath]' role='measure' type='quantitative' />
+      <column caption='Garage Area' datatype='integer' name='[GarageArea]' role='measure' type='quantitative' />
+      <column caption='Garage Cars' datatype='integer' name='[GarageCars]' role='measure' type='quantitative' />
+      <column caption='Garage Cond' datatype='string' name='[GarageCond]' role='dimension' type='nominal' />
+      <column caption='Garage Finish' datatype='string' name='[GarageFinish]' role='dimension' type='nominal' />
+      <column caption='Garage Qual' datatype='string' name='[GarageQual]' role='dimension' type='nominal' />
+      <column caption='Garage Type' datatype='string' name='[GarageType]' role='dimension' type='nominal' />
+      <column caption='Garage Yr Blt' datatype='integer' name='[GarageYrBlt]' role='measure' type='quantitative' />
+      <column caption='Gr Liv Area' datatype='integer' name='[GrLivArea]' role='measure' type='quantitative' />
+      <column caption='Half Bath' datatype='integer' name='[HalfBath]' role='measure' type='quantitative' />
+      <column caption='Heating QC' datatype='string' name='[HeatingQC]' role='dimension' type='nominal' />
+      <column caption='House Style' datatype='string' name='[HouseStyle]' role='dimension' type='nominal' />
+      <column caption='Kitchen Abv Gr' datatype='integer' name='[KitchenAbvGr]' role='measure' type='quantitative' />
+      <column caption='Kitchen Qual' datatype='string' name='[KitchenQual]' role='dimension' type='nominal' />
+      <column caption='Land Contour' datatype='string' name='[LandContour]' role='dimension' type='nominal' />
+      <column caption='Land Slope' datatype='string' name='[LandSlope]' role='dimension' type='nominal' />
+      <column caption='Lot Area' datatype='integer' name='[LotArea]' role='measure' type='quantitative' />
+      <column caption='Lot Config' datatype='string' name='[LotConfig]' role='dimension' type='nominal' />
+      <column caption='Lot Frontage' datatype='integer' name='[LotFrontage]' role='measure' type='quantitative' />
+      <column caption='Lot Shape' datatype='string' name='[LotShape]' role='dimension' type='nominal' />
+      <column caption='Low Qual Fin SF' datatype='integer' name='[LowQualFinSF]' role='measure' type='quantitative' />
+      <column caption='MS Sub Class' datatype='integer' name='[MSSubClass]' role='measure' type='quantitative' />
+      <column caption='MS Zoning' datatype='string' name='[MSZoning]' role='dimension' type='nominal' />
+      <column caption='Mas Vnr Area' datatype='integer' name='[MasVnrArea]' role='measure' type='quantitative' />
+      <column caption='Mas Vnr Type' datatype='string' name='[MasVnrType]' role='dimension' type='nominal' />
+      <column caption='Misc Feature' datatype='string' name='[MiscFeature]' role='dimension' type='nominal' />
+      <column caption='Misc Val' datatype='integer' name='[MiscVal]' role='measure' type='quantitative' />
+      <column caption='Mo Sold' datatype='integer' name='[MoSold]' role='measure' type='quantitative' />
+      <column caption='Open Porch SF' datatype='integer' name='[OpenPorchSF]' role='measure' type='quantitative' />
+      <column caption='Overall Cond' datatype='integer' name='[OverallCond]' role='measure' type='quantitative' />
+      <column caption='Overall Qual' datatype='integer' name='[OverallQual]' role='measure' type='quantitative' />
+      <column caption='Paved Drive' datatype='string' name='[PavedDrive]' role='dimension' type='nominal' />
+      <column caption='Pool Area' datatype='integer' name='[PoolArea]' role='measure' type='quantitative' />
+      <column caption='Pool QC' datatype='string' name='[PoolQC]' role='dimension' type='nominal' />
+      <column caption='Predicted Price (copy)' datatype='real' name='[Predicted Price (copy)_130604433262301186]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&quot;&#13;&#10;return tabpy.query(&apos;predict_for_tableau&apos;,_arg1,_arg2,_arg3,_arg4)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Parameter 4],[Parameters].[Parameter 1],[Parameters].[Parameter 7],[Parameters].[Parameter 2])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Roof Matl' datatype='string' name='[RoofMatl]' role='dimension' type='nominal' />
+      <column caption='Roof Style' datatype='string' name='[RoofStyle]' role='dimension' type='nominal' />
+      <column caption='Sale Condition' datatype='string' name='[SaleCondition]' role='dimension' type='nominal' />
+      <column caption='Sale Price' datatype='integer' name='[SalePrice]' role='measure' type='quantitative' />
+      <column caption='Sale Type' datatype='string' name='[SaleType]' role='dimension' type='nominal' />
+      <column caption='Screen Porch' datatype='integer' name='[ScreenPorch]' role='measure' type='quantitative' />
+      <column caption='Tot Rms Abv Grd' datatype='integer' name='[TotRmsAbvGrd]' role='measure' type='quantitative' />
+      <column caption='Total Bsmt SF' datatype='integer' name='[TotalBsmtSF]' role='measure' type='quantitative' />
+      <column caption='Wood Deck SF' datatype='integer' name='[WoodDeckSF]' role='measure' type='quantitative' />
+      <column caption='Year Built' datatype='integer' name='[YearBuilt]' role='dimension' type='quantitative' />
+      <column caption='Year Remod Add' datatype='integer' name='[YearRemodAdd]' role='dimension' type='quantitative' />
+      <column caption='Yr Sold' datatype='integer' name='[YrSold]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Ames_Housing_Price_Data' datatype='table' name='[__tableau_internal_object_id__].[Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.79661' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.20339' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Overall Quality' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3.0'>
+          <calculation class='tableau' formula='3.0' />
+        </column>
+        <column caption='Lot Area' datatype='real' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='37260.740370185093'>
+          <calculation class='tableau' formula='37260.740370185093' />
+          <range max='215245.0' min='1300.0' />
+        </column>
+        <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;BrDale&quot;'>
+          <calculation class='tableau' formula='&quot;BrDale&quot;' />
+        </column>
+        <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='1994.0'>
+          <calculation class='tableau' formula='1994.0' />
+          <aliases>
+            <alias key='1872.0' value='1872' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Ames_Housing_Price_Data' id='Ames!Housing!Price!Data_0F826A1F7B5F48489B59D7AEF2202415'>
+            <properties context=''>
+              <relation connection='excel-direct.1351g5708r4frf117o6p50yezbjw' name='Ames_Housing_Price_Data' table='[Ames_Housing_Price_Data$]' type='table'>
+                <columns gridOrigin='A1:CD2581:no:A1:CD2581:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='PID' ordinal='1' />
+                  <column datatype='integer' name='GrLivArea' ordinal='2' />
+                  <column datatype='integer' name='SalePrice' ordinal='3' />
+                  <column datatype='integer' name='MSSubClass' ordinal='4' />
+                  <column datatype='string' name='MSZoning' ordinal='5' />
+                  <column datatype='integer' name='LotFrontage' ordinal='6' />
+                  <column datatype='integer' name='LotArea' ordinal='7' />
+                  <column datatype='string' name='Street' ordinal='8' />
+                  <column datatype='string' name='Alley' ordinal='9' />
+                  <column datatype='string' name='LotShape' ordinal='10' />
+                  <column datatype='string' name='LandContour' ordinal='11' />
+                  <column datatype='string' name='Utilities' ordinal='12' />
+                  <column datatype='string' name='LotConfig' ordinal='13' />
+                  <column datatype='string' name='LandSlope' ordinal='14' />
+                  <column datatype='string' name='Neighborhood' ordinal='15' />
+                  <column datatype='string' name='Condition1' ordinal='16' />
+                  <column datatype='string' name='Condition2' ordinal='17' />
+                  <column datatype='string' name='BldgType' ordinal='18' />
+                  <column datatype='string' name='HouseStyle' ordinal='19' />
+                  <column datatype='integer' name='OverallQual' ordinal='20' />
+                  <column datatype='integer' name='OverallCond' ordinal='21' />
+                  <column datatype='integer' name='YearBuilt' ordinal='22' />
+                  <column datatype='integer' name='YearRemodAdd' ordinal='23' />
+                  <column datatype='string' name='RoofStyle' ordinal='24' />
+                  <column datatype='string' name='RoofMatl' ordinal='25' />
+                  <column datatype='string' name='Exterior1st' ordinal='26' />
+                  <column datatype='string' name='Exterior2nd' ordinal='27' />
+                  <column datatype='string' name='MasVnrType' ordinal='28' />
+                  <column datatype='integer' name='MasVnrArea' ordinal='29' />
+                  <column datatype='string' name='ExterQual' ordinal='30' />
+                  <column datatype='string' name='ExterCond' ordinal='31' />
+                  <column datatype='string' name='Foundation' ordinal='32' />
+                  <column datatype='string' name='BsmtQual' ordinal='33' />
+                  <column datatype='string' name='BsmtCond' ordinal='34' />
+                  <column datatype='string' name='BsmtExposure' ordinal='35' />
+                  <column datatype='string' name='BsmtFinType1' ordinal='36' />
+                  <column datatype='integer' name='BsmtFinSF1' ordinal='37' />
+                  <column datatype='string' name='BsmtFinType2' ordinal='38' />
+                  <column datatype='integer' name='BsmtFinSF2' ordinal='39' />
+                  <column datatype='integer' name='BsmtUnfSF' ordinal='40' />
+                  <column datatype='integer' name='TotalBsmtSF' ordinal='41' />
+                  <column datatype='string' name='Heating' ordinal='42' />
+                  <column datatype='string' name='HeatingQC' ordinal='43' />
+                  <column datatype='string' name='CentralAir' ordinal='44' />
+                  <column datatype='string' name='Electrical' ordinal='45' />
+                  <column datatype='integer' name='1stFlrSF' ordinal='46' />
+                  <column datatype='integer' name='2ndFlrSF' ordinal='47' />
+                  <column datatype='integer' name='LowQualFinSF' ordinal='48' />
+                  <column datatype='integer' name='BsmtFullBath' ordinal='49' />
+                  <column datatype='integer' name='BsmtHalfBath' ordinal='50' />
+                  <column datatype='integer' name='FullBath' ordinal='51' />
+                  <column datatype='integer' name='HalfBath' ordinal='52' />
+                  <column datatype='integer' name='BedroomAbvGr' ordinal='53' />
+                  <column datatype='integer' name='KitchenAbvGr' ordinal='54' />
+                  <column datatype='string' name='KitchenQual' ordinal='55' />
+                  <column datatype='integer' name='TotRmsAbvGrd' ordinal='56' />
+                  <column datatype='string' name='Functional' ordinal='57' />
+                  <column datatype='integer' name='Fireplaces' ordinal='58' />
+                  <column datatype='string' name='FireplaceQu' ordinal='59' />
+                  <column datatype='string' name='GarageType' ordinal='60' />
+                  <column datatype='integer' name='GarageYrBlt' ordinal='61' />
+                  <column datatype='string' name='GarageFinish' ordinal='62' />
+                  <column datatype='integer' name='GarageCars' ordinal='63' />
+                  <column datatype='integer' name='GarageArea' ordinal='64' />
+                  <column datatype='string' name='GarageQual' ordinal='65' />
+                  <column datatype='string' name='GarageCond' ordinal='66' />
+                  <column datatype='string' name='PavedDrive' ordinal='67' />
+                  <column datatype='integer' name='WoodDeckSF' ordinal='68' />
+                  <column datatype='integer' name='OpenPorchSF' ordinal='69' />
+                  <column datatype='integer' name='EnclosedPorch' ordinal='70' />
+                  <column datatype='integer' name='3SsnPorch' ordinal='71' />
+                  <column datatype='integer' name='ScreenPorch' ordinal='72' />
+                  <column datatype='integer' name='PoolArea' ordinal='73' />
+                  <column datatype='string' name='PoolQC' ordinal='74' />
+                  <column datatype='string' name='Fence' ordinal='75' />
+                  <column datatype='string' name='MiscFeature' ordinal='76' />
+                  <column datatype='integer' name='MiscVal' ordinal='77' />
+                  <column datatype='integer' name='MoSold' ordinal='78' />
+                  <column datatype='integer' name='YrSold' ordinal='79' />
+                  <column datatype='string' name='SaleType' ordinal='80' />
+                  <column datatype='string' name='SaleCondition' ordinal='81' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Predicting Price&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{92EE6D9C-E86D-446C-929A-CC9B0A94FC9E}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Ames_Housing_Price_Data (Ames_Housing_Price_Data)' name='federated.130yxx80m9yg9o1h8611a0wi84e1' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Overall Quality' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3.0'>
+              <calculation class='tableau' formula='3.0' />
+            </column>
+            <column caption='Lot Area' datatype='real' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='37260.740370185093'>
+              <calculation class='tableau' formula='37260.740370185093' />
+              <range max='215245.0' min='1300.0' />
+            </column>
+            <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;BrDale&quot;'>
+              <calculation class='tableau' formula='&quot;BrDale&quot;' />
+            </column>
+            <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='1994.0'>
+              <calculation class='tableau' formula='1994.0' />
+              <aliases>
+                <alias key='1872.0' value='1872' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.130yxx80m9yg9o1h8611a0wi84e1'>
+            <column caption='Predicted Price (copy)' datatype='real' name='[Predicted Price (copy)_130604433262301186]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&quot;&#13;&#10;return tabpy.query(&apos;predict_for_tableau&apos;,_arg1,_arg2,_arg3,_arg4)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Parameter 4],[Parameters].[Parameter 1],[Parameters].[Parameter 7],[Parameters].[Parameter 2])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[Predicted Price (copy)_130604433262301186]' derivation='User' name='[usr:Predicted Price (copy)_130604433262301186:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.130yxx80m9yg9o1h8611a0wi84e1].[usr:Predicted Price (copy)_130604433262301186:qk]</cols>
+      </table>
+      <simple-id uuid='{F2F6771E-E5C2-49A8-93D4-694FCBC20EA3}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 7]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{540C2598-132A-4368-AE3E-DDC7353980EB}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 4]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 7]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{18778424-3A3C-45CF-B8D8-F1CDB39C533D}' />
+    </window>
+  </windows>
+</workbook>
