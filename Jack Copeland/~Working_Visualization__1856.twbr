@@ -52,12 +52,12 @@
           <member value='13.0' />
         </members>
       </column>
-      <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='879.847923961981'>
-        <calculation class='tableau' formula='879.847923961981' />
+      <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='1324.9824912456229'>
+        <calculation class='tableau' formula='1324.9824912456229' />
         <range max='1488.0' min='0.0' />
       </column>
-      <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;StoneBr&quot;'>
-        <calculation class='tableau' formula='&quot;StoneBr&quot;' />
+      <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;BrDale&quot;'>
+        <calculation class='tableau' formula='&quot;BrDale&quot;' />
         <members>
           <member value='&quot;Blmngtn&quot;' />
           <member value='&quot;Blueste&quot;' />
@@ -89,16 +89,16 @@
           <member value='&quot;Veenker&quot;' />
         </members>
       </column>
-      <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='4319.0925462731366'>
-        <calculation class='tableau' formula='4319.0925462731366' />
+      <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='7814.'>
+        <calculation class='tableau' formula='7814.' />
         <range max='7814.0' min='334.0' />
       </column>
-      <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='127804.74737368684'>
-        <calculation class='tableau' formula='127804.74737368684' />
+      <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='207432.10105052526'>
+        <calculation class='tableau' formula='207432.10105052526' />
         <range max='215245.0' min='1300.0' />
       </column>
-      <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='2003.0'>
-        <calculation class='tableau' formula='2003.0' />
+      <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='2010.0'>
+        <calculation class='tableau' formula='2010.0' />
         <aliases>
           <alias key='1872.0' value='1872' />
         </aliases>
@@ -1745,6 +1745,11 @@
       <column caption='Paved Drive' datatype='string' name='[PavedDrive]' role='dimension' type='nominal' />
       <column caption='Pool Area' datatype='integer' name='[PoolArea]' role='measure' type='quantitative' />
       <column caption='Pool QC' datatype='string' name='[PoolQC]' role='dimension' type='nominal' />
+      <column caption='Predicted Price (copy)' datatype='real' name='[Predicted Price (copy)_130604433262301186]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;predict_for_tableau&apos;,_arg1)[&apos;response&apos;]&quot;,[Parameters].[Parameter 4])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Roof Matl' datatype='string' name='[RoofMatl]' role='dimension' type='nominal' />
       <column caption='Roof Style' datatype='string' name='[RoofStyle]' role='dimension' type='nominal' />
       <column caption='Sale Condition' datatype='string' name='[SaleCondition]' role='dimension' type='nominal' />
@@ -1763,20 +1768,23 @@
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='879.847923961981'>
-          <calculation class='tableau' formula='879.847923961981' />
+        <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='1324.9824912456229'>
+          <calculation class='tableau' formula='1324.9824912456229' />
           <range max='1488.0' min='0.0' />
         </column>
-        <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='4319.0925462731366'>
-          <calculation class='tableau' formula='4319.0925462731366' />
+        <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;BrDale&quot;'>
+          <calculation class='tableau' formula='&quot;BrDale&quot;' />
+        </column>
+        <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='7814.'>
+          <calculation class='tableau' formula='7814.' />
           <range max='7814.0' min='334.0' />
         </column>
-        <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='127804.74737368684'>
-          <calculation class='tableau' formula='127804.74737368684' />
+        <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='207432.10105052526'>
+          <calculation class='tableau' formula='207432.10105052526' />
           <range max='215245.0' min='1300.0' />
         </column>
-        <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='2003.0'>
-          <calculation class='tableau' formula='2003.0' />
+        <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='2010.0'>
+          <calculation class='tableau' formula='2010.0' />
           <aliases>
             <alias key='1872.0' value='1872' />
           </aliases>
@@ -1894,20 +1902,20 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='879.847923961981'>
-              <calculation class='tableau' formula='879.847923961981' />
+            <column caption='Garage Area' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='1324.9824912456229'>
+              <calculation class='tableau' formula='1324.9824912456229' />
               <range max='1488.0' min='0.0' />
             </column>
-            <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='4319.0925462731366'>
-              <calculation class='tableau' formula='4319.0925462731366' />
+            <column caption='Total Living Area' datatype='real' name='[Parameter 5]' param-domain-type='range' role='measure' type='quantitative' value='7814.'>
+              <calculation class='tableau' formula='7814.' />
               <range max='7814.0' min='334.0' />
             </column>
-            <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='127804.74737368684'>
-              <calculation class='tableau' formula='127804.74737368684' />
+            <column caption='Lot Area' datatype='real' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='207432.10105052526'>
+              <calculation class='tableau' formula='207432.10105052526' />
               <range max='215245.0' min='1300.0' />
             </column>
-            <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='2003.0'>
-              <calculation class='tableau' formula='2003.0' />
+            <column caption='Year Built' datatype='real' name='[Parameter 7]' param-domain-type='list' role='measure' type='quantitative' value='2010.0'>
+              <calculation class='tableau' formula='2010.0' />
               <aliases>
                 <alias key='1872.0' value='1872' />
               </aliases>
@@ -1958,9 +1966,59 @@
       </table>
       <simple-id uuid='{92EE6D9C-E86D-446C-929A-CC9B0A94FC9E}' />
     </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Ames_Housing_Price_Data (Ames_Housing_Price_Data)' name='federated.130yxx80m9yg9o1h8611a0wi84e1' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Neighborhood_param' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;BrDale&quot;'>
+              <calculation class='tableau' formula='&quot;BrDale&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.130yxx80m9yg9o1h8611a0wi84e1'>
+            <column caption='Predicted Price (copy)' datatype='real' name='[Predicted Price (copy)_130604433262301186]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;predict_for_tableau&apos;,_arg1)[&apos;response&apos;]&quot;,[Parameters].[Parameter 4])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[Predicted Price (copy)_130604433262301186]' derivation='User' name='[usr:Predicted Price (copy)_130604433262301186:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.130yxx80m9yg9o1h8611a0wi84e1].[usr:Predicted Price (copy)_130604433262301186:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.130yxx80m9yg9o1h8611a0wi84e1].[usr:Predicted Price (copy)_130604433262301186:qk]' x-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols>([federated.130yxx80m9yg9o1h8611a0wi84e1].[usr:Predicted Price (copy)_130604433262301186:qk] + [federated.130yxx80m9yg9o1h8611a0wi84e1].[usr:Predicted Price (copy)_130604433262301186:qk])</cols>
+      </table>
+      <simple-id uuid='{F2F6771E-E5C2-49A8-93D4-694FCBC20EA3}' />
+    </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1990,6 +2048,34 @@
         </edge>
       </cards>
       <simple-id uuid='{540C2598-132A-4368-AE3E-DDC7353980EB}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 4]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{18778424-3A3C-45CF-B8D8-F1CDB39C533D}' />
     </window>
   </windows>
 </workbook>
